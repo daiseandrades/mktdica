@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MKTDica — Te ajudando a acelerar marketing, vendas e uso da IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700;1,800&family=Montserrat:wght@400;700;900&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --obsidian:#120A04; --brown-dark:#2B1810; --brown-rich:#4A2810;
+  --brown-mid:#6B4226; --brown-light:#A0714F; --gold:#C49A6C;
+  --cream:#F5EFE6; --cream-dark:#E8DDD0; --white-warm:#FDFAF6;
+  --gray-dark:#2C2C2C; --gray-mid:#555555; --gray-light:#9A9A9A;
+  --sh-sm:0 2px 12px rgba(26,15,8,.07);
+  --sh-md:0 4px 24px rgba(26,15,8,.12),0 1px 4px rgba(26,15,8,.06);
+  --sh-lg:0 12px 40px rgba(26,15,8,.14),0 2px 8px rgba(26,15,8,.07);
+}
+*{margin:0;padding:0;box-sizing:border-box} html{scroll-behavior:smooth}
+body{background:var(--white-warm);color:var(--gray-dark);font-family:'Poppins',sans-serif;font-weight:400;line-height:1.7}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(253,250,246,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--cream-dark);padding:0 56px;height:60px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 1px 12px rgba(26,15,8,.05)}
+.nav-logo{font-family:'Montserrat',sans-serif;font-weight:900;font-size:18px;color:var(--brown-dark);letter-spacing:-.5px;text-decoration:none}
+.nav-logo span{color:var(--brown-light)}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:2.5px;color:var(--gray-mid);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--brown-mid)}
+
+/* HERO */
+.hero{padding:96px 56px 56px;background:linear-gradient(155deg,var(--obsidian) 0%,var(--brown-dark) 50%,var(--brown-rich) 100%);display:grid;grid-template-columns:1fr 310px;gap:48px;align-items:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 75% 30%,rgba(196,154,108,.07) 0%,transparent 55%),radial-gradient(ellipse at 10% 85%,rgba(107,66,38,.1) 0%,transparent 50%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-28px;left:-28px;width:100px;height:100px;border:2px solid rgba(196,154,108,.15);border-radius:14px;transform:rotate(-8deg)}
+.hero-corner{position:absolute;top:-26px;right:-26px;width:104px;height:104px;border:2px solid rgba(196,154,108,.2);border-radius:14px;transform:rotate(14deg)}
+
+.hero-left{position:relative;z-index:2}
+.hero-kicker{font-family:'Montserrat',sans-serif;font-weight:900;font-size:10px;text-transform:uppercase;letter-spacing:4px;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:9px}
+.hero-kicker::before{content:'';width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 2.2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.8)}}
+.hero-tagline{font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(26px,3.2vw,44px);color:var(--white-warm);line-height:1.1;letter-spacing:-.5px;margin-bottom:18px}
+.hero-tagline em{font-style:italic;color:var(--gold)}
+.hero-accent{width:40px;height:2.5px;background:var(--gold);border-radius:2px;margin-bottom:16px}
+.hero-sub{font-size:14.5px;font-weight:300;color:rgba(253,250,246,.65);line-height:1.85;max-width:440px;margin-bottom:22px}
+.hero-feats{display:flex;flex-wrap:wrap;gap:7px}
+.hero-feat{font-family:'Montserrat',sans-serif;font-weight:700;font-size:9px;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);background:rgba(196,154,108,.1);border:1px solid rgba(196,154,108,.22);padding:4px 12px;border-radius:20px}
+
+.hero-right{position:relative;z-index:2}
+.hero-posts-lbl{font-family:'Montserrat',sans-serif;font-weight:700;font-size:9px;text-transform:uppercase;letter-spacing:2.5px;color:rgba(196,154,108,.55);margin-bottom:12px}
+.hero-post{display:block;text-decoration:none;padding:14px 16px;background:rgba(253,250,246,.05);border:1px solid rgba(196,154,108,.18);border-radius:12px;margin-bottom:9px;transition:background .18s,border-color .18s,transform .15s}
+.hero-post:hover{background:rgba(253,250,246,.1);border-color:rgba(196,154,108,.38);transform:translateX(3px)}
+.hero-post-cat{font-family:'Montserrat',sans-serif;font-weight:700;font-size:8px;text-transform:uppercase;letter-spacing:2px;color:var(--gold);display:flex;align-items:center;gap:7px;margin-bottom:5px}
+.hp-new{background:var(--brown-mid);color:var(--white-warm);padding:2px 8px;border-radius:8px;font-size:7px}
+.hero-post-name{font-family:'Poppins',sans-serif;font-weight:600;font-size:12.5px;color:var(--white-warm);line-height:1.3}
+.hero-post-arrow{display:block;font-size:11px;color:rgba(196,154,108,.45);margin-top:5px;transition:transform .18s,color .18s}
+.hero-post:hover .hero-post-arrow{transform:translateX(4px);color:var(--gold)}
+
+/* QUICKNAV */
+.quicknav{background:var(--white-warm);border-bottom:1px solid var(--cream-dark);padding:0 56px;box-shadow:0 2px 12px rgba(26,15,8,.05);position:relative;z-index:10}
+.qn-row{display:flex;gap:10px;padding:13px 0 15px;align-items:center;overflow-x:auto}
+.qn-row::-webkit-scrollbar{display:none}
+
+.qn-primary{display:flex;align-items:center;gap:11px;padding:11px 18px;background:var(--brown-dark);border-radius:11px;text-decoration:none;flex-shrink:0;box-shadow:0 3px 14px rgba(26,15,8,.22);transition:background .18s,transform .15s,box-shadow .2s}
+.qn-primary:hover{background:var(--brown-rich);transform:translateY(-2px);box-shadow:0 6px 22px rgba(26,15,8,.3)}
+.qn-ico{width:30px;height:30px;min-width:30px;border-radius:8px;display:flex;align-items:center;justify-content:center}
+.qn-primary .qn-ico{background:rgba(196,154,108,.15);color:var(--gold)}
+.qn-lbl{font-family:'Montserrat',sans-serif;font-weight:700;font-size:8px;text-transform:uppercase;letter-spacing:2px;margin-bottom:1px}
+.qn-primary .qn-lbl{color:rgba(196,154,108,.6)}
+.qn-name{font-family:'Poppins',sans-serif;font-weight:600;font-size:12px}
+.qn-primary .qn-name{color:var(--white-warm)}
+.qn-arr{margin-left:2px;transition:transform .18s}
+.qn-primary .qn-arr{color:rgba(196,154,108,.45)}
+.qn-primary:hover .qn-arr{transform:translateX(3px);color:var(--gold)}
+
+.qn-sec{display:flex;align-items:center;gap:10px;padding:10px 15px;background:var(--cream);border:1px solid var(--cream-dark);border-radius:11px;text-decoration:none;flex-shrink:0;transition:background .18s,border-color .18s,transform .15s,box-shadow .18s}
+.qn-sec:hover{background:var(--white-warm);border-color:var(--brown-light);transform:translateY(-2px);box-shadow:0 4px 14px rgba(26,15,8,.08)}
+.qn-sec .qn-ico{background:var(--cream-dark);color:var(--brown-mid);transition:background .18s,color .18s}
+.qn-sec:hover .qn-ico{background:var(--brown-dark);color:var(--gold)}
+.qn-sec .qn-lbl{color:var(--brown-light)}
+.qn-sec .qn-name{color:var(--brown-dark)}
+.qn-sec .qn-arr{color:var(--cream-dark);transition:transform .18s,color .18s}
+.qn-sec:hover .qn-arr{transform:translateX(3px);color:var(--brown-light)}
+
+.qn-div{width:1px;background:var(--cream-dark);flex-shrink:0;align-self:stretch;margin:2px 4px}
+
+.qn-pill{display:flex;align-items:center;gap:7px;padding:9px 14px;background:var(--cream);border:1px solid var(--cream-dark);border-radius:11px;text-decoration:none;flex-shrink:0;transition:background .18s,border-color .18s,transform .15s}
+.qn-pill:hover{background:var(--white-warm);border-color:var(--brown-light);transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,15,8,.08)}
+.qn-pill.off{opacity:.35;cursor:default;pointer-events:none}
+.qn-pn{font-family:'Montserrat',sans-serif;font-weight:900;font-size:10px;color:var(--brown-light)}
+.qn-pt{font-family:'Poppins',sans-serif;font-size:11.5px;font-weight:500;color:var(--brown-dark)}
+.qn-pill.off .qn-pt{color:var(--gray-light);font-style:italic}
+.qn-pbadge{font-family:'Montserrat',sans-serif;font-weight:700;font-size:7.5px;text-transform:uppercase;letter-spacing:1.5px;color:var(--white-warm);background:var(--brown-mid);padding:2px 8px;border-radius:8px}
+
+/* SECTIONS */
+.sec{padding:72px 56px}
+.sec.alt{background:var(--cream)}
+.sec-lbl{font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:3px;color:var(--brown-light);margin-bottom:8px}
+.sec-ttl{font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(24px,2.8vw,38px);color:var(--brown-dark);line-height:1.12;margin-bottom:32px}
+.sec-ttl em{font-style:italic;color:var(--brown-mid)}
+.sep{width:40px;height:2px;background:var(--brown-light);border-radius:2px;margin:16px 0 22px}
+
+/* LIBRARY */
+.lib-split{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+.lib-col-head{display:flex;align-items:center;gap:12px;margin-bottom:16px;padding-bottom:14px;border-bottom:2px solid var(--cream-dark)}
+.lib-col-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:var(--brown-dark);color:var(--gold)}
+.lib-col-ttl{font-family:'Montserrat',sans-serif;font-weight:900;font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--brown-dark)}
+.lib-col-sub{font-family:'Poppins',sans-serif;font-size:11px;color:var(--gray-light);margin-top:1px}
+
+/* POST LIST ITEM */
+.post-item{border:1px solid var(--cream-dark);border-radius:14px;margin-bottom:10px;overflow:hidden;box-shadow:var(--sh-sm);transition:box-shadow .22s;background:var(--white-warm)}
+.post-item:hover{box-shadow:var(--sh-md)}
+.post-item.featured{border-color:rgba(160,113,79,.35);box-shadow:0 2px 20px rgba(26,15,8,.1),0 0 0 1.5px rgba(160,113,79,.15)}
+
+.post-row{display:flex;align-items:center;gap:14px;padding:16px 20px;cursor:pointer;user-select:none;transition:background .15s}
+.post-row:hover{background:var(--cream)}
+.post-row-num{font-family:'Montserrat',sans-serif;font-weight:900;font-size:11px;color:var(--brown-light);min-width:22px}
+.post-row-body{flex:1}
+.post-row-meta{font-family:'Montserrat',sans-serif;font-weight:700;font-size:8px;text-transform:uppercase;letter-spacing:2px;color:var(--brown-light);display:flex;align-items:center;gap:7px;margin-bottom:3px}
+.pr-new{background:var(--brown-mid);color:var(--white-warm);padding:2px 7px;border-radius:7px;font-size:7.5px}
+.post-row-title{font-family:'Poppins',sans-serif;font-weight:600;font-size:13px;color:var(--brown-dark);line-height:1.3}
+.post-row-chevron{width:28px;height:28px;border-radius:7px;border:1px solid var(--cream-dark);display:flex;align-items:center;justify-content:center;color:var(--gray-light);flex-shrink:0;transition:transform .25s,background .18s,color .18s}
+.post-item.open .post-row-chevron{transform:rotate(180deg);background:var(--brown-dark);color:var(--gold);border-color:transparent}
+
+.post-content{display:none;border-top:1px solid var(--cream-dark)}
+.post-item.open .post-content{display:block}
+
+/* POST CONTENT INNER */
+.pc-head{background:var(--white-warm);padding:24px 28px;border-bottom:1px solid var(--cream-dark)}
+.pc-meta{font-family:'Montserrat',sans-serif;font-weight:700;font-size:9px;text-transform:uppercase;letter-spacing:2px;color:var(--brown-light);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.pc-new{background:var(--brown-mid);color:var(--white-warm);padding:2px 8px;border-radius:8px;font-size:8px}
+.pc-title{font-family:'Playfair Display',serif;font-weight:800;font-size:26px;color:var(--brown-dark);line-height:1.2}
+.pc-title em{font-style:italic;color:var(--brown-mid)}
+
+.pc-prompt{background:var(--cream);padding:24px 28px;border-bottom:1px solid var(--cream-dark)}
+.pc-lbl{font-family:'Montserrat',sans-serif;font-weight:700;font-size:9px;text-transform:uppercase;letter-spacing:3px;color:var(--brown-light);margin-bottom:12px}
+.prompt-topic{display:flex;align-items:center;gap:14px;background:var(--white-warm);border:1px solid var(--cream-dark);border-left:4px solid var(--brown-light);border-radius:0 10px 10px 0;padding:16px 20px;margin-bottom:16px}
+.pt-ico{width:40px;height:40px;min-width:40px;background:var(--brown-dark);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--gold);box-shadow:0 3px 10px rgba(26,15,8,.2)}
+.pt-eye{font-family:'Montserrat',sans-serif;font-weight:700;font-size:8px;text-transform:uppercase;letter-spacing:2.5px;color:var(--brown-light);margin-bottom:3px}
+.pt-name{font-family:'Playfair Display',serif;font-weight:800;font-size:20px;color:var(--brown-dark);line-height:1.15}
+
+.prompt-box{background:var(--obsidian);border-radius:11px;padding:24px 28px;font-family:'Poppins',sans-serif;font-size:12px;color:rgba(253,250,246,.78);line-height:1.9;white-space:pre-wrap;word-break:break-word;border:1px solid rgba(196,154,108,.12)}
+.prompt-box .hl{color:var(--gold);font-weight:500}
+.copy-btn{display:inline-flex;align-items:center;gap:8px;margin-top:14px;background:var(--obsidian);color:var(--white-warm);font-family:'Montserrat',sans-serif;font-weight:700;font-size:10.5px;text-transform:uppercase;letter-spacing:1.5px;padding:10px 20px;border-radius:8px;border:1px solid rgba(196,154,108,.2);cursor:pointer;transition:background .2s,transform .2s;box-shadow:0 2px 10px rgba(26,15,8,.18)}
+.copy-btn:hover{background:var(--brown-rich);transform:translateY(-2px);box-shadow:0 5px 18px rgba(26,15,8,.24)}
+.copy-btn.copied{background:#1e5c38;border-color:rgba(46,196,100,.3)}
+.ci{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2}
+
+.pc-howto{background:var(--white-warm);padding:24px 28px}
+.howto-lbl{font-family:'Montserrat',sans-serif;font-weight:700;font-size:9px;text-transform:uppercase;letter-spacing:3px;color:var(--brown-light);margin-bottom:18px}
+.howto-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.hc{display:flex;gap:11px;align-items:flex-start}
+.hn{width:25px;height:25px;min-width:25px;background:var(--obsidian);color:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;box-shadow:0 2px 8px rgba(26,15,8,.18);margin-top:1px}
+.ht{font-size:12.5px;color:var(--gray-mid);line-height:1.72}
+.ht strong{color:var(--brown-dark);font-weight:500}
+.dl-box{background:rgba(160,113,79,.07);border-left:3px solid var(--brown-light);border-radius:0 9px 9px 0;padding:14px 18px;margin-top:18px}
+.dl-lbl{font-family:'Montserrat',sans-serif;font-weight:700;font-size:9px;text-transform:uppercase;letter-spacing:2px;color:var(--brown-light);margin-bottom:9px}
+.dl-i{display:flex;gap:8px;font-size:12.5px;color:var(--gray-mid);align-items:flex-start;margin-bottom:5px}
+.dl-dot{width:4px;height:4px;min-width:4px;background:var(--brown-light);border-radius:50%;margin-top:9px}
+
+/* Numbered step rows */
+.step-rows{display:flex;flex-direction:column}
+.step-row{display:flex;gap:18px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--cream-dark)}
+.step-row:last-child{border-bottom:none}
+.srn{width:30px;height:30px;min-width:30px;background:var(--brown-dark);color:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;box-shadow:0 2px 8px rgba(26,15,8,.2);margin-top:2px}
+.srt{font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--brown-dark);margin-bottom:5px}
+.srd{font-size:13px;color:var(--gray-mid);line-height:1.78}
+.srd strong{color:var(--brown-dark);font-weight:500}
+.tip{background:var(--cream);border-left:3px solid var(--brown-light);border-radius:0 8px 8px 0;padding:10px 14px;margin-top:9px;font-size:12.5px;color:var(--gray-mid);line-height:1.7}
+
+/* SOBRE */
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
+.about-lbl{font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:3px;color:var(--brown-light);margin-bottom:10px}
+.about-name{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(26px,2.8vw,38px);color:var(--brown-dark);line-height:1.15}
+.about-name em{font-style:italic;color:var(--brown-mid)}
+.about-txt{font-size:14.5px;color:var(--gray-mid);line-height:1.9;margin-bottom:14px}
+.about-handle{font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--brown-light);padding:7px 16px;border:1.5px solid var(--brown-light);border-radius:20px;display:inline-block;margin-top:8px}
+.about-card{background:var(--white-warm);border-radius:14px;padding:32px 28px;border:1px solid var(--cream-dark);position:relative;overflow:hidden;box-shadow:var(--sh-sm)}
+.about-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:linear-gradient(to bottom,var(--brown-light),var(--brown-mid));border-radius:2px 0 0 2px}
+.about-q{font-family:'Playfair Display',serif;font-size:17px;font-style:italic;color:var(--brown-dark);line-height:1.65;margin-bottom:22px}
+.pills{display:flex;flex-wrap:wrap;gap:7px}
+.pill{font-family:'Montserrat',sans-serif;font-weight:700;font-size:9.5px;text-transform:uppercase;letter-spacing:1.5px;padding:4px 12px;border-radius:20px;background:var(--brown-dark);color:var(--cream)}
+.pill.o{background:transparent;border:1.5px solid var(--brown-light);color:var(--brown-mid)}
+
+/* COMO USAR CLAUDE */
+.claude-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px}
+.claude-card{background:var(--white-warm);border-radius:13px;padding:24px 22px;border:1px solid var(--cream-dark);box-shadow:var(--sh-sm);transition:transform .2s,box-shadow .2s}
+.claude-card:hover{transform:translateY(-3px);box-shadow:var(--sh-lg)}
+.claude-card.dk{background:var(--obsidian);border-color:transparent;box-shadow:0 4px 22px rgba(26,15,8,.28)}
+.cc-icon{width:36px;height:36px;background:var(--cream-dark);border-radius:9px;display:flex;align-items:center;justify-content:center;color:var(--brown-mid);margin-bottom:12px}
+.claude-card.dk .cc-icon{background:rgba(196,154,108,.12);color:var(--gold)}
+.cc-ttl{font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.8px;color:var(--brown-dark);margin-bottom:6px}
+.claude-card.dk .cc-ttl{color:var(--cream)}
+.cc-txt{font-size:12.5px;color:var(--gray-mid);line-height:1.75}
+.claude-card.dk .cc-txt{color:rgba(253,250,246,.58)}
+.cc-tag{display:inline-block;margin-top:10px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:8.5px;text-transform:uppercase;letter-spacing:1.5px;color:var(--brown-light);background:rgba(160,113,79,.1);border:1px solid rgba(160,113,79,.2);padding:3px 9px;border-radius:8px}
+
+.claude-intro-box{background:var(--cream);border:1px solid var(--cream-dark);border-left:4px solid var(--brown-light);border-radius:0 12px 12px 0;padding:18px 22px;margin-bottom:28px}
+.claude-intro-box p{font-size:13.5px;color:var(--gray-mid);line-height:1.8}
+.claude-intro-box strong{color:var(--brown-dark);font-weight:500}
+
+/* coming soon */
+.cs{background:var(--cream);border:1.5px dashed var(--cream-dark);border-radius:14px;padding:36px 32px;text-align:center}
+.cs p{font-family:'Playfair Display',serif;font-size:16px;font-style:italic;color:var(--gray-light)}
+
+/* FOOTER */
+footer{background:var(--obsidian);padding:52px 56px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;position:relative;overflow:hidden}
+footer::before{content:'';position:absolute;bottom:-30px;right:-30px;width:110px;height:110px;border:2px solid rgba(196,154,108,.13);border-radius:14px}
+.f-logo{font-family:'Montserrat',sans-serif;font-weight:900;font-size:19px;color:var(--white-warm);letter-spacing:-.5px;margin-bottom:5px}
+.f-logo span{color:var(--gold)}
+.f-sub{font-size:12px;color:rgba(253,250,246,.36);font-weight:300}
+.f-handle{font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--gold);margin-bottom:4px}
+.f-copy{font-size:11px;color:rgba(253,250,246,.24);text-align:right}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media (max-width:860px){
+  nav{padding:0 20px} .nav-links{display:none}
+  .hero{grid-template-columns:1fr;padding:88px 24px 48px} .hero-right{display:none}
+  .quicknav{padding:0 20px}
+  .sec{padding:52px 24px} .about-grid{grid-template-columns:1fr;gap:32px}
+  .lib-split{grid-template-columns:1fr} .claude-grid{grid-template-columns:1fr}
+  .pc-head,.pc-prompt,.pc-howto{padding:20px} .howto-grid{grid-template-columns:1fr}
+  footer{padding:36px 24px;flex-direction:column;align-items:flex-start} .f-copy{text-align:left}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">mkt<span>.</span>dica</a>
+  <ul class="nav-links">
+    <li><a href="#library">Biblioteca</a></li>
+    <li><a href="#sobre">Quem é</a></li>
+    <li><a href="#como-usar">Claude</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-corner"></div>
+  <div class="hero-left">
+    <p class="hero-kicker">MKTDica</p>
+    <h1 class="hero-tagline">
+      Te ajudando a acelerar<br>
+      <em>marketing, vendas</em><br>
+      e uso da IA
+    </h1>
+    <div class="hero-accent"></div>
+    <p class="hero-sub">O que eu uso no dia a dia para escalar marketing, vendas e produtividade com IA. Aqui você encontra:</p>
+    <div class="hero-feats">
+      <span class="hero-feat">Prompts reais</span>
+      <span class="hero-feat">Processos testados</span>
+      <span class="hero-feat">Ferramentas que funcionam</span>
+    </div>
+  </div>
+  <div class="hero-right">
+    <p class="hero-posts-lbl">Últimas postagens</p>
+    <a href="#post-01" class="hero-post" onclick="openPost('post-01')">
+      <div class="hero-post-cat">Prompt 01 · Instagram <span class="hp-new">Novo</span></div>
+      <p class="hero-post-name">Carrossel 100% por IA</p>
+      <span class="hero-post-arrow">→</span>
+    </a>
+    <a href="#post-02" class="hero-post" onclick="openPost('post-02')">
+      <div class="hero-post-cat">Passo a passo · PowerPoint</div>
+      <p class="hero-post-name">Apresentações com IA no PowerPoint</p>
+      <span class="hero-post-arrow">→</span>
+    </a>
+  </div>
+</section>
+
+<!-- QUICKNAV (sem linha de intro) -->
+<div class="quicknav">
+  <div class="qn-row">
+    <a href="#library" class="qn-primary">
+      <div class="qn-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h4"/></svg></div>
+      <div><p class="qn-lbl">Biblioteca</p><p class="qn-name">Prompts e Passo a passo</p></div>
+      <svg class="qn-arr" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <a href="#sobre" class="qn-sec">
+      <div class="qn-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+      <div><p class="qn-lbl">Quem é</p><p class="qn-name">MKTDica</p></div>
+      <svg class="qn-arr" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <a href="#como-usar" class="qn-sec">
+      <div class="qn-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+      <div><p class="qn-lbl">Passo a passo</p><p class="qn-name">Como usar Claude</p></div>
+      <svg class="qn-arr" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <div class="qn-div"></div>
+    <a href="#post-01" class="qn-pill" onclick="openPost('post-01')">
+      <span class="qn-pn">01</span><span class="qn-pt">Carrossel para Instagram</span><span class="qn-pbadge">Novo</span>
+    </a>
+    <a href="#post-02" class="qn-pill" onclick="openPost('post-02')">
+      <span class="qn-pn">02</span><span class="qn-pt">Apresentações no PowerPoint</span>
+    </a>
+    <div class="qn-pill off"><span class="qn-pn">03</span><span class="qn-pt">Em breve</span></div>
+  </div>
+</div>
+
+<!-- 1. BIBLIOTECA -->
+<section class="sec" id="library">
+  <div class="reveal">
+    <p class="sec-lbl">Biblioteca</p>
+    <h2 class="sec-ttl">Prompts <em>&amp;</em> Passo a passo</h2>
+  </div>
+  <div class="lib-split reveal">
+
+    <!-- COLUNA: PROMPTS -->
+    <div>
+      <div class="lib-col-head">
+        <div class="lib-col-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h4"/></svg>
+        </div>
+        <div>
+          <p class="lib-col-ttl">Prompts</p>
+          <p class="lib-col-sub">Copie, preencha e use no Claude</p>
+        </div>
+      </div>
+
+      <div class="post-item featured" id="post-01">
+        <div class="post-row" onclick="togglePost('post-01')">
+          <span class="post-row-num">01</span>
+          <div class="post-row-body">
+            <div class="post-row-meta">Instagram <span class="pr-new">Mais recente</span></div>
+            <p class="post-row-title">Carrossel 100% por IA</p>
+          </div>
+          <div class="post-row-chevron">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+        </div>
+        <div class="post-content">
+          <div class="pc-head">
+            <p class="pc-meta">Prompt 01 · Instagram <span class="pc-new">Mais recente</span></p>
+            <h3 class="pc-title">Carrossel <em>100% por IA</em></h3>
+          </div>
+          <div class="pc-prompt">
+            <p class="pc-lbl">Copie o prompt</p>
+            <div class="prompt-topic">
+              <div class="pt-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h4"/></svg></div>
+              <div><p class="pt-eye">Tema do prompt</p><p class="pt-name">Carrossel para Instagram</p></div>
+            </div>
+            <div class="prompt-box" id="p01">PROMPT COMPLETO PARA CARROSSEL (INSTAGRAM)
+
+<span class="hl">PREENCHA ABAIXO:</span>
+
+CONTEÚDO: [escreva o conteúdo completo ou assunto do carrossel]
+
+QUANTIDADE DE SLIDES: [ex: 6 slides incluindo capa e final]
+
+TOM: [ex: didático / inspiracional / vendas / informativo]
+
+IDENTIDADE VISUAL:
+Cores: [coloque aqui as cores da sua marca]
+Fontes: [coloque aqui as fontes da sua marca ou deixe a IA decidir]
+Handle: @[seu perfil]
+
+<span class="hl">COMANDOS:</span>
+
+Crie um carrossel completo para o Instagram no formato 1080x1350px considerando as informações acima.
+
+Crie um arquivo HTML para que a pessoa consiga abrir no navegador e baixar as imagens.
+
+Inclua:
+• Botão para baixar cada slide em PNG
+• Botão para baixar todos os slides de uma vez
+
+<span class="hl">ESTRUTURA VISUAL:</span>
+
+• Alternar entre fundo claro e fundo escuro
+• Headline grande (mínimo 80px) que pare o scroll
+• Subtítulo curto
+• Seta indicando swipe
+• Slides de conteúdo com blocos com ícone + label em caps + descrição e número decorativo grande no canto
+• Slide final com fundo claro, frase de impacto grande e dois botões de CTA
+
+<span class="hl">REGRAS DE DESIGN OBRIGATÓRIAS:</span>
+
+• Título da capa: mínimo 80px, peso 800, legível à primeira vista
+• Títulos dos slides: mínimo 44px, com hierarquia clara
+• Alto contraste em todos os textos
+• Cantos decorativos em todos os slides
+• Linha de acento colorida antes de cada título
+• Handle (@perfil) presente no rodapé de todos os slides
+• Layout limpo, com bastante espaço em branco
+
+<span class="hl">REGRAS DE LAYOUT (CRÍTICO):</span>
+
+• Todo o conteúdo deve caber 100% dentro do slide, sem cortes
+• Proibido overflow
+• Conteúdo centralizado
+• Espaçamento consistente
+• Não sobrepor textos ou elementos</div>
+            <button class="copy-btn" onclick="copyPrompt('p01',this)">
+              <svg class="ci" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              Copiar prompt
+            </button>
+          </div>
+          <div class="pc-howto">
+            <p class="howto-lbl">Passo a passo · Como criar o carrossel</p>
+            <div class="howto-grid">
+              <div class="hc"><div class="hn">1</div><p class="ht">Acesse <strong>claude.ai</strong> e crie sua conta gratuita</p></div>
+              <div class="hc"><div class="hn">2</div><p class="ht">Copie o prompt usando o botão <strong>"Copiar prompt"</strong></p></div>
+              <div class="hc"><div class="hn">3</div><p class="ht">Preencha com <strong>conteúdo, tom e identidade visual</strong></p></div>
+              <div class="hc"><div class="hn">4</div><p class="ht">Cole no Claude e pressione <strong>Enter</strong></p></div>
+            </div>
+            <div class="dl-box">
+              <p class="dl-lbl">Como baixar as imagens</p>
+              <div class="dl-i"><div class="dl-dot"></div><span>Clique em <strong>"Abrir no navegador"</strong> no arquivo gerado (use Chrome)</span></div>
+              <div class="dl-i"><div class="dl-dot"></div><span>Clique em <strong>"Baixar todos os slides"</strong></span></div>
+              <div class="dl-i"><div class="dl-dot"></div><span>PNGs salvos em <strong>Downloads</strong></span></div>
+              <div class="dl-i"><div class="dl-dot"></div><span>Importe no Instagram na ordem e publique</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cs"><p>Mais prompts chegando em breve</p></div>
+    </div>
+
+    <!-- COLUNA: PASSO A PASSO -->
+    <div>
+      <div class="lib-col-head">
+        <div class="lib-col-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div>
+          <p class="lib-col-ttl">Passo a passo</p>
+          <p class="lib-col-sub">Guias práticos para usar IA</p>
+        </div>
+      </div>
+
+      <div class="post-item featured" id="post-02">
+        <div class="post-row" onclick="togglePost('post-02')">
+          <span class="post-row-num">01</span>
+          <div class="post-row-body">
+            <div class="post-row-meta">PowerPoint <span class="pr-new">Mais recente</span></div>
+            <p class="post-row-title">Apresentações com IA no PowerPoint</p>
+          </div>
+          <div class="post-row-chevron">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+        </div>
+        <div class="post-content">
+          <div class="pc-head">
+            <p class="pc-meta">Passo a passo · PowerPoint <span class="pc-new">Mais recente</span></p>
+            <h3 class="pc-title">Como criar ou melhorar Apresentações<br><em>100% com IA no PowerPoint</em></h3>
+          </div>
+          <div class="pc-howto">
+            <p class="howto-lbl">Passo a passo</p>
+            <div class="step-rows">
+              <div class="step-row"><div class="srn">1</div><div><p class="srt">Acesse o PowerPoint</p><p class="srd">Abra o PowerPoint na versão desktop (Windows/Mac) ou acesse pelo navegador em <strong>office.com</strong> com seu login Microsoft 365.</p><div class="tip">Sem o Office instalado? Use <strong>office.com</strong> no navegador, funciona da mesma forma.</div></div></div>
+              <div class="step-row"><div class="srn">2</div><div><p class="srt">Abra a loja de suplementos</p><p class="srd">No menu superior, clique em <strong>Inserir</strong> e depois em <strong>Suplementos</strong> (ou "Add-ins"). Uma janela com o marketplace da Microsoft será aberta.</p></div></div>
+              <div class="step-row"><div class="srn">3</div><div><p class="srt">Pesquise e instale o Claude</p><p class="srd">Na barra de busca, digite <strong>Claude</strong>. Localize o suplemento da Anthropic e clique em <strong>Adicionar</strong>. Instalação imediata e gratuita, basta ter uma conta Anthropic (plano Free ou Pro).</p><div class="tip">O suplemento fica fixado no painel lateral direito do PowerPoint.</div></div></div>
+              <div class="step-row"><div class="srn">4</div><div><p class="srt">Autentique com sua conta Anthropic</p><p class="srd">Ao abrir o painel do Claude pela primeira vez, será solicitado login. Use a mesma conta que você acessa o <strong>claude.ai</strong>.</p></div></div>
+              <div class="step-row"><div class="srn">5</div><div><p class="srt">Comece a criar</p><p class="srd">Com o painel aberto, digite comandos diretamente. O Claude cria novos conteúdos, edita slides prontos e estrutura apresentações completas.</p><div class="tip"><strong>Exemplos de comando:</strong><br>"Crie uma apresentação sobre Marketing na era da IA"<br>"Crie uma apresentação para a empresa @MKTDICA www.mktdica.br"<br>"Melhore as cores do slide 4 e altere o conteúdo para Conheça o @MKTDICA"</div></div></div>
+              <div class="step-row"><div class="srn">6</div><div><p class="srt">Aplique e ajuste</p><p class="srd">O Claude entregará os slides prontos. Para ajustes, basta dar os comandos no chat no canto direito.</p><div class="tip"><strong>Exemplo:</strong> "Altere as cores do slide 4 e mude o conteúdo para Conheça o @MKTDICA"</div></div></div>
+            </div>
+            <div style="margin-top:20px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--brown-light)">@MKTDICA</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cs"><p>Mais guias chegando em breve</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. SOBRE -->
+<section class="sec alt" id="sobre">
+  <div class="about-grid reveal">
+    <div>
+      <p class="about-lbl">Quem é</p>
+      <h2 class="about-name">Daise Silveira<br><em>@mktdica</em></h2>
+      <div class="sep"></div>
+      <p class="about-txt">Uma Gerente de Growth Marketing no corporativo, compartilho, de forma prática e aplicável, o que uso no dia a dia para escalar marketing e vendas.</p>
+      <p class="about-txt">Aqui você encontra ferramentas, estratégias, prompts reais e melhores práticas que aplico para otimizar tempo, aumentar produtividade, acelerar resultados e gerar mais negócios.</p>
+      <div class="about-handle">@mktdica</div>
+    </div>
+    <div>
+      <div class="about-card">
+        <p class="about-q">"Marketing, Vendas e IA na prática."</p>
+        <div class="pills">
+          <span class="pill">Marketing</span><span class="pill">Vendas</span><span class="pill">IA aplicada</span>
+          <span class="pill o">Prompts reais</span><span class="pill o">Resultados</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. COMO USAR CLAUDE -->
+<section class="sec" id="como-usar">
+  <div class="reveal">
+    <p class="sec-lbl">Passo a passo</p>
+    <h2 class="sec-ttl">Como usar o <em>Claude</em></h2>
+  </div>
+
+  <div class="claude-intro-box reveal">
+    <p><strong>Claude</strong> é uma IA da Anthropic — funciona como um assistente inteligente que você acessa pelo browser ou instala em ferramentas como PowerPoint, Excel e Chrome. Você conversa com ele em português, dá comandos e ele executa. Abaixo, o que você precisa saber para começar.</p>
+  </div>
+
+  <div class="claude-grid reveal">
+
+    <div class="claude-card dk">
+      <div class="cc-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+      <p class="cc-ttl">Claude.ai — Chat</p>
+      <p class="cc-txt">Acesse <strong style="color:var(--gold)">claude.ai</strong> no navegador, crie uma conta gratuita e comece a conversar. Cole prompts, peça textos, análises, códigos e muito mais. É o ponto de partida para tudo.</p>
+      <span class="cc-tag">Ponto de entrada</span>
+    </div>
+
+    <div class="claude-card">
+      <div class="cc-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+      <p class="cc-ttl">Claude in Chrome</p>
+      <p class="cc-txt">Extensão para o navegador Chrome. Com ela, o Claude vê a página que você está acessando e pode resumir, responder perguntas e executar ações diretamente no browser.</p>
+      <span class="cc-tag">Extensão Chrome</span>
+    </div>
+
+    <div class="claude-card">
+      <div class="cc-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+      <p class="cc-ttl">Claude in PowerPoint</p>
+      <p class="cc-txt">Suplemento dentro do PowerPoint (via Microsoft AppSource). Cria e edita slides diretamente pelo painel lateral. Veja o passo a passo na Biblioteca acima.</p>
+      <span class="cc-tag">Suplemento Office</span>
+    </div>
+
+    <div class="claude-card">
+      <div class="cc-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+      <p class="cc-ttl">Claude in Excel</p>
+      <p class="cc-txt">Suplemento para Excel. Analisa planilhas, cria fórmulas, resume dados e gera insights diretamente nas células. Ideal para quem trabalha com relatórios e dados.</p>
+      <span class="cc-tag">Suplemento Office</span>
+    </div>
+
+    <div class="claude-card">
+      <div class="cc-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+      <p class="cc-ttl">Claude Code</p>
+      <p class="cc-txt">Ferramenta para desenvolvedores. Funciona na linha de comando e executa tarefas de código de forma autônoma: cria arquivos, roda scripts, faz debugging e muito mais.</p>
+      <span class="cc-tag">Desenvolvedores</span>
+    </div>
+
+    <div class="claude-card">
+      <div class="cc-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+      <p class="cc-ttl">Conectores e Integrações</p>
+      <p class="cc-txt">O Claude conecta com ferramentas como Notion, Slack, HubSpot, Asana, Google Drive e mais. Você gerencia projetos, envia mensagens e acessa documentos diretamente pelo chat.</p>
+      <span class="cc-tag">Integrações MCP</span>
+    </div>
+
+  </div>
+
+  <div class="claude-intro-box reveal" style="margin-top:0;margin-bottom:0">
+    <p><strong>Dica rápida:</strong> comece pelo <strong>claude.ai</strong> no navegador. Cole um prompt desta biblioteca, veja o resultado e ajuste no próprio chat. Quando quiser avançar, explore as integrações com as ferramentas que você já usa no trabalho.</p>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="f-logo">mkt<span>.</span>dica</div>
+    <p class="f-sub">Marketing, Vendas e IA na prática</p>
+  </div>
+  <div>
+    <p class="f-handle">@mktdica</p>
+    <p class="f-copy">Daise Silveira · 2025</p>
+  </div>
+</footer>
+
+<script>
+const revObs = new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{ if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*60);revObs.unobserve(e.target);} });
+},{threshold:.06});
+document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
+
+function togglePost(id){ document.getElementById(id).classList.toggle('open'); }
+function openPost(id){ const el=document.getElementById(id); if(el&&!el.classList.contains('open'))el.classList.add('open'); }
+
+function copyPrompt(id,btn){
+  const text=document.getElementById(id).innerText;
+  navigator.clipboard.writeText(text).then(()=>{
+    btn.classList.add('copied');
+    btn.innerHTML=`<svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Copiado!`;
+    setTimeout(()=>{
+      btn.classList.remove('copied');
+      btn.innerHTML=`<svg class="ci" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copiar prompt`;
+    },2500);
+  });
+}
+</script>
+</body>
+</html>
