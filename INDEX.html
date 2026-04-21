@@ -7,204 +7,200 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700;1,800&family=Montserrat:wght@400;700;900&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root {
-  --obsidian:#120A04; --brown-dark:#2B1810; --brown-rich:#4A2810;
-  --brown-mid:#6B4226; --brown-light:#A0714F; --gold:#C49A6C;
-  --cream:#F5EFE6; --cream-dark:#E8DDD0; --white-warm:#FDFAF6;
-  --gray-dark:#2C2C2C; --gray-mid:#555555; --gray-light:#9A9A9A;
-  --sh-sm:0 2px 12px rgba(26,15,8,.07);
-  --sh-md:0 4px 24px rgba(26,15,8,.12),0 1px 4px rgba(26,15,8,.06);
-  --sh-lg:0 12px 40px rgba(26,15,8,.14),0 2px 8px rgba(26,15,8,.07);
+:root{
+  --obs:#120A04; --bd:#2B1810; --br:#4A2810; --bm:#6B4226; --bl:#A0714F; --gold:#C49A6C;
+  --cr:#F5EFE6; --crd:#E8DDD0; --ww:#FDFAF6;
+  --gd:#2C2C2C; --gm:#555555; --gl:#9A9A9A;
+  --s1:0 2px 12px rgba(26,15,8,.07); --s2:0 6px 28px rgba(26,15,8,.12),0 1px 4px rgba(26,15,8,.06); --s3:0 16px 48px rgba(26,15,8,.16),0 2px 8px rgba(26,15,8,.07);
 }
 *{margin:0;padding:0;box-sizing:border-box} html{scroll-behavior:smooth}
-body{background:var(--white-warm);color:var(--gray-dark);font-family:'Poppins',sans-serif;font-weight:400;line-height:1.7}
+body{background:var(--ww);color:var(--gd);font-family:'Poppins',sans-serif;font-weight:400;line-height:1.7}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(253,250,246,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--cream-dark);padding:0 56px;height:60px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 1px 12px rgba(26,15,8,.05)}
-.nav-logo{font-family:'Montserrat',sans-serif;font-weight:900;font-size:18px;color:var(--brown-dark);letter-spacing:-.5px;text-decoration:none}
-.nav-logo span{color:var(--brown-light)}
-.nav-links{display:flex;gap:32px;list-style:none}
-.nav-links a{font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:2.5px;color:var(--gray-mid);text-decoration:none;transition:color .2s}
-.nav-links a:hover{color:var(--brown-mid)}
+/* ─ NAV ──────────────────────────── */
+nav{position:fixed;top:0;left:0;right:0;z-index:300;background:rgba(253,250,246,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--crd);padding:0 60px;height:62px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 1px 16px rgba(26,15,8,.06)}
+.nav-logo{font-family:'Montserrat',sans-serif;font-weight:900;font-size:18px;color:var(--bd);letter-spacing:-.5px;text-decoration:none}
+.nav-logo span{color:var(--bl)}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:2.5px;color:var(--gm);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--bm)}
 
-/* HERO */
-.hero{padding:96px 56px 56px;background:linear-gradient(155deg,var(--obsidian) 0%,var(--brown-dark) 50%,var(--brown-rich) 100%);display:grid;grid-template-columns:1fr 310px;gap:48px;align-items:center;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 75% 30%,rgba(196,154,108,.07) 0%,transparent 55%),radial-gradient(ellipse at 10% 85%,rgba(107,66,38,.1) 0%,transparent 50%);pointer-events:none}
-.hero::after{content:'';position:absolute;bottom:-28px;left:-28px;width:100px;height:100px;border:2px solid rgba(196,154,108,.15);border-radius:14px;transform:rotate(-8deg)}
-.hero-corner{position:absolute;top:-26px;right:-26px;width:104px;height:104px;border:2px solid rgba(196,154,108,.2);border-radius:14px;transform:rotate(14deg)}
+/* ─ HERO ─────────────────────────── */
+.hero{padding:100px 60px 64px;background:linear-gradient(150deg,var(--obs) 0%,var(--bd) 48%,var(--br) 100%);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 20%,rgba(196,154,108,.07) 0%,transparent 55%),radial-gradient(ellipse at 5% 90%,rgba(107,66,38,.1) 0%,transparent 50%);pointer-events:none}
+.hero-dec-tr{position:absolute;top:-28px;right:-28px;width:110px;height:110px;border:2px solid rgba(196,154,108,.2);border-radius:16px;transform:rotate(15deg)}
+.hero-dec-bl{position:absolute;bottom:-32px;left:-32px;width:120px;height:120px;border:2px solid rgba(196,154,108,.13);border-radius:16px;transform:rotate(-9deg)}
 
-.hero-left{position:relative;z-index:2}
+.hero-inner{display:grid;grid-template-columns:1fr 300px;gap:52px;align-items:center;position:relative;z-index:2}
 .hero-kicker{font-family:'Montserrat',sans-serif;font-weight:900;font-size:10px;text-transform:uppercase;letter-spacing:4px;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:9px}
 .hero-kicker::before{content:'';width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 2.2s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.8)}}
-.hero-tagline{font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(26px,3.2vw,44px);color:var(--white-warm);line-height:1.1;letter-spacing:-.5px;margin-bottom:18px}
-.hero-tagline em{font-style:italic;color:var(--gold)}
-.hero-accent{width:40px;height:2.5px;background:var(--gold);border-radius:2px;margin-bottom:16px}
-.hero-sub{font-size:14.5px;font-weight:300;color:rgba(253,250,246,.65);line-height:1.85;max-width:440px;margin-bottom:22px}
-.hero-feats{display:flex;flex-wrap:wrap;gap:7px}
-.hero-feat{font-family:'Montserrat',sans-serif;font-weight:700;font-size:9px;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);background:rgba(196,154,108,.1);border:1px solid rgba(196,154,108,.22);padding:4px 12px;border-radius:20px}
+.hero-title{font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(28px,3.5vw,50px);color:var(--ww);line-height:1.08;letter-spacing:-.5px;margin-bottom:18px}
+.hero-title em{font-style:italic;color:var(--gold)}
+.hero-line{width:44px;height:2.5px;background:var(--gold);border-radius:2px;margin-bottom:16px}
+.hero-sub{font-size:14.5px;font-weight:300;color:rgba(253,250,246,.65);line-height:1.9;max-width:460px;margin-bottom:26px}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+.hero-tag{font-family:'Montserrat',sans-serif;font-weight:700;font-size:9px;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);background:rgba(196,154,108,.1);border:1px solid rgba(196,154,108,.22);padding:4px 13px;border-radius:20px}
 
-.hero-right{position:relative;z-index:2}
-.hero-posts-lbl{font-family:'Montserrat',sans-serif;font-weight:700;font-size:9px;text-transform:uppercase;letter-spacing:2.5px;color:rgba(196,154,108,.55);margin-bottom:12px}
-.hero-post{display:block;text-decoration:none;padding:14px 16px;background:rgba(253,250,246,.05);border:1px solid rgba(196,154,108,.18);border-radius:12px;margin-bottom:9px;transition:background .18s,border-color .18s,transform .15s}
-.hero-post:hover{background:rgba(253,250,246,.1);border-color:rgba(196,154,108,.38);transform:translateX(3px)}
-.hero-post-cat{font-family:'Montserrat',sans-serif;font-weight:700;font-size:8px;text-transform:uppercase;letter-spacing:2px;color:var(--gold);display:flex;align-items:center;gap:7px;margin-bottom:5px}
-.hp-new{background:var(--brown-mid);color:var(--white-warm);padding:2px 8px;border-radius:8px;font-size:7px}
-.hero-post-name{font-family:'Poppins',sans-serif;font-weight:600;font-size:12.5px;color:var(--white-warm);line-height:1.3}
-.hero-post-arrow{display:block;font-size:11px;color:rgba(196,154,108,.45);margin-top:5px;transition:transform .18s,color .18s}
-.hero-post:hover .hero-post-arrow{transform:translateX(4px);color:var(--gold)}
+/* Hero 3 big CTAs */
+.hero-ctas{display:flex;flex-direction:column;gap:10px}
+.hero-cta-btn{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:14px;text-decoration:none;transition:transform .18s,box-shadow .2s,background .18s;border:1px solid transparent}
+.hero-cta-btn:hover{transform:translateX(4px)}
+.hero-cta-btn.primary{background:rgba(253,250,246,.1);border-color:rgba(196,154,108,.3);box-shadow:0 4px 20px rgba(26,15,8,.25)}
+.hero-cta-btn.primary:hover{background:rgba(253,250,246,.15);border-color:rgba(196,154,108,.5);box-shadow:0 8px 32px rgba(26,15,8,.3)}
+.hero-cta-btn.sec{background:rgba(253,250,246,.05);border-color:rgba(196,154,108,.15)}
+.hero-cta-btn.sec:hover{background:rgba(253,250,246,.09);border-color:rgba(196,154,108,.3)}
+.hcta-icon{width:38px;height:38px;min-width:38px;border-radius:10px;display:flex;align-items:center;justify-content:center}
+.hero-cta-btn.primary .hcta-icon{background:rgba(196,154,108,.2);color:var(--gold)}
+.hero-cta-btn.sec .hcta-icon{background:rgba(196,154,108,.1);color:rgba(196,154,108,.7)}
+.hcta-lbl{font-family:'Montserrat',sans-serif;font-weight:700;font-size:8px;text-transform:uppercase;letter-spacing:2px;margin-bottom:2px}
+.hero-cta-btn.primary .hcta-lbl{color:rgba(196,154,108,.65)}
+.hero-cta-btn.sec .hcta-lbl{color:rgba(196,154,108,.45)}
+.hcta-name{font-family:'Poppins',sans-serif;font-weight:600;font-size:13px}
+.hero-cta-btn.primary .hcta-name{color:var(--ww)}
+.hero-cta-btn.sec .hcta-name{color:rgba(253,250,246,.75)}
+.hcta-arr{margin-left:auto;transition:transform .18s,color .18s}
+.hero-cta-btn.primary .hcta-arr{color:rgba(196,154,108,.5)}
+.hero-cta-btn.sec .hcta-arr{color:rgba(196,154,108,.3)}
+.hero-cta-btn:hover .hcta-arr{transform:translateX(3px);color:var(--gold)}
 
-/* QUICKNAV */
-.quicknav{background:var(--white-warm);border-bottom:1px solid var(--cream-dark);padding:0 56px;box-shadow:0 2px 12px rgba(26,15,8,.05);position:relative;z-index:10}
-.qn-row{display:flex;gap:10px;padding:13px 0 15px;align-items:center;overflow-x:auto}
-.qn-row::-webkit-scrollbar{display:none}
+/* ─ SECTION BASE ─────────────────── */
+.sec{padding:80px 60px}
+.sec.alt{background:var(--cr)}
+.s-lbl{font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:3px;color:var(--bl);margin-bottom:8px}
+.s-ttl{font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(26px,3vw,42px);color:var(--bd);line-height:1.12;margin-bottom:36px}
+.s-ttl em{font-style:italic;color:var(--bm)}
+.sep{width:44px;height:2px;background:var(--bl);border-radius:2px;margin:16px 0 24px}
 
-.qn-primary{display:flex;align-items:center;gap:11px;padding:11px 18px;background:var(--brown-dark);border-radius:11px;text-decoration:none;flex-shrink:0;box-shadow:0 3px 14px rgba(26,15,8,.22);transition:background .18s,transform .15s,box-shadow .2s}
-.qn-primary:hover{background:var(--brown-rich);transform:translateY(-2px);box-shadow:0 6px 22px rgba(26,15,8,.3)}
-.qn-ico{width:30px;height:30px;min-width:30px;border-radius:8px;display:flex;align-items:center;justify-content:center}
-.qn-primary .qn-ico{background:rgba(196,154,108,.15);color:var(--gold)}
-.qn-lbl{font-family:'Montserrat',sans-serif;font-weight:700;font-size:8px;text-transform:uppercase;letter-spacing:2px;margin-bottom:1px}
-.qn-primary .qn-lbl{color:rgba(196,154,108,.6)}
-.qn-name{font-family:'Poppins',sans-serif;font-weight:600;font-size:12px}
-.qn-primary .qn-name{color:var(--white-warm)}
-.qn-arr{margin-left:2px;transition:transform .18s}
-.qn-primary .qn-arr{color:rgba(196,154,108,.45)}
-.qn-primary:hover .qn-arr{transform:translateX(3px);color:var(--gold)}
-
-.qn-sec{display:flex;align-items:center;gap:10px;padding:10px 15px;background:var(--cream);border:1px solid var(--cream-dark);border-radius:11px;text-decoration:none;flex-shrink:0;transition:background .18s,border-color .18s,transform .15s,box-shadow .18s}
-.qn-sec:hover{background:var(--white-warm);border-color:var(--brown-light);transform:translateY(-2px);box-shadow:0 4px 14px rgba(26,15,8,.08)}
-.qn-sec .qn-ico{background:var(--cream-dark);color:var(--brown-mid);transition:background .18s,color .18s}
-.qn-sec:hover .qn-ico{background:var(--brown-dark);color:var(--gold)}
-.qn-sec .qn-lbl{color:var(--brown-light)}
-.qn-sec .qn-name{color:var(--brown-dark)}
-.qn-sec .qn-arr{color:var(--cream-dark);transition:transform .18s,color .18s}
-.qn-sec:hover .qn-arr{transform:translateX(3px);color:var(--brown-light)}
-
-.qn-div{width:1px;background:var(--cream-dark);flex-shrink:0;align-self:stretch;margin:2px 4px}
-
-.qn-pill{display:flex;align-items:center;gap:7px;padding:9px 14px;background:var(--cream);border:1px solid var(--cream-dark);border-radius:11px;text-decoration:none;flex-shrink:0;transition:background .18s,border-color .18s,transform .15s}
-.qn-pill:hover{background:var(--white-warm);border-color:var(--brown-light);transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,15,8,.08)}
-.qn-pill.off{opacity:.35;cursor:default;pointer-events:none}
-.qn-pn{font-family:'Montserrat',sans-serif;font-weight:900;font-size:10px;color:var(--brown-light)}
-.qn-pt{font-family:'Poppins',sans-serif;font-size:11.5px;font-weight:500;color:var(--brown-dark)}
-.qn-pill.off .qn-pt{color:var(--gray-light);font-style:italic}
-.qn-pbadge{font-family:'Montserrat',sans-serif;font-weight:700;font-size:7.5px;text-transform:uppercase;letter-spacing:1.5px;color:var(--white-warm);background:var(--brown-mid);padding:2px 8px;border-radius:8px}
-
-/* SECTIONS */
-.sec{padding:72px 56px}
-.sec.alt{background:var(--cream)}
-.sec-lbl{font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:3px;color:var(--brown-light);margin-bottom:8px}
-.sec-ttl{font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(24px,2.8vw,38px);color:var(--brown-dark);line-height:1.12;margin-bottom:32px}
-.sec-ttl em{font-style:italic;color:var(--brown-mid)}
-.sep{width:40px;height:2px;background:var(--brown-light);border-radius:2px;margin:16px 0 22px}
-
-/* LIBRARY */
+/* ─ LIBRARY ──────────────────────── */
 .lib-split{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
-.lib-col-head{display:flex;align-items:center;gap:12px;margin-bottom:16px;padding-bottom:14px;border-bottom:2px solid var(--cream-dark)}
-.lib-col-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:var(--brown-dark);color:var(--gold)}
-.lib-col-ttl{font-family:'Montserrat',sans-serif;font-weight:900;font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--brown-dark)}
-.lib-col-sub{font-family:'Poppins',sans-serif;font-size:11px;color:var(--gray-light);margin-top:1px}
+.lib-col-head{display:flex;align-items:center;gap:12px;margin-bottom:16px;padding-bottom:14px;border-bottom:2px solid var(--crd)}
+.lib-col-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:var(--bd);color:var(--gold)}
+.lib-col-ttl{font-family:'Montserrat',sans-serif;font-weight:900;font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--bd)}
+.lib-col-sub{font-family:'Poppins',sans-serif;font-size:11px;color:var(--gl);margin-top:1px}
 
-/* POST LIST ITEM */
-.post-item{border:1px solid var(--cream-dark);border-radius:14px;margin-bottom:10px;overflow:hidden;box-shadow:var(--sh-sm);transition:box-shadow .22s;background:var(--white-warm)}
-.post-item:hover{box-shadow:var(--sh-md)}
-.post-item.featured{border-color:rgba(160,113,79,.35);box-shadow:0 2px 20px rgba(26,15,8,.1),0 0 0 1.5px rgba(160,113,79,.15)}
-
+/* post accordion */
+.post-item{border:1px solid var(--crd);border-radius:14px;margin-bottom:10px;overflow:hidden;box-shadow:var(--s1);background:var(--ww);transition:box-shadow .22s}
+.post-item:hover{box-shadow:var(--s2)}
+.post-item.featured{border-color:rgba(160,113,79,.38);box-shadow:0 2px 20px rgba(26,15,8,.1),0 0 0 1.5px rgba(160,113,79,.18)}
 .post-row{display:flex;align-items:center;gap:14px;padding:16px 20px;cursor:pointer;user-select:none;transition:background .15s}
-.post-row:hover{background:var(--cream)}
-.post-row-num{font-family:'Montserrat',sans-serif;font-weight:900;font-size:11px;color:var(--brown-light);min-width:22px}
-.post-row-body{flex:1}
-.post-row-meta{font-family:'Montserrat',sans-serif;font-weight:700;font-size:8px;text-transform:uppercase;letter-spacing:2px;color:var(--brown-light);display:flex;align-items:center;gap:7px;margin-bottom:3px}
-.pr-new{background:var(--brown-mid);color:var(--white-warm);padding:2px 7px;border-radius:7px;font-size:7.5px}
-.post-row-title{font-family:'Poppins',sans-serif;font-weight:600;font-size:13px;color:var(--brown-dark);line-height:1.3}
-.post-row-chevron{width:28px;height:28px;border-radius:7px;border:1px solid var(--cream-dark);display:flex;align-items:center;justify-content:center;color:var(--gray-light);flex-shrink:0;transition:transform .25s,background .18s,color .18s}
-.post-item.open .post-row-chevron{transform:rotate(180deg);background:var(--brown-dark);color:var(--gold);border-color:transparent}
-
-.post-content{display:none;border-top:1px solid var(--cream-dark)}
+.post-row:hover{background:var(--cr)}
+.prn{font-family:'Montserrat',sans-serif;font-weight:900;font-size:11px;color:var(--bl);min-width:22px}
+.pr-body{flex:1}
+.pr-meta{font-family:'Montserrat',sans-serif;font-weight:700;font-size:8px;text-transform:uppercase;letter-spacing:2px;color:var(--bl);display:flex;align-items:center;gap:7px;margin-bottom:3px}
+.pr-new{background:var(--bm);color:var(--ww);padding:2px 7px;border-radius:7px;font-size:7.5px}
+.pr-title{font-family:'Poppins',sans-serif;font-weight:600;font-size:13px;color:var(--bd);line-height:1.3}
+.pr-chev{width:28px;height:28px;border-radius:7px;border:1px solid var(--crd);display:flex;align-items:center;justify-content:center;color:var(--gl);flex-shrink:0;transition:transform .25s,background .18s,color .18s}
+.post-item.open .pr-chev{transform:rotate(180deg);background:var(--bd);color:var(--gold);border-color:transparent}
+.post-content{display:none;border-top:1px solid var(--crd)}
 .post-item.open .post-content{display:block}
 
-/* POST CONTENT INNER */
-.pc-head{background:var(--white-warm);padding:24px 28px;border-bottom:1px solid var(--cream-dark)}
-.pc-meta{font-family:'Montserrat',sans-serif;font-weight:700;font-size:9px;text-transform:uppercase;letter-spacing:2px;color:var(--brown-light);margin-bottom:8px;display:flex;align-items:center;gap:8px}
-.pc-new{background:var(--brown-mid);color:var(--white-warm);padding:2px 8px;border-radius:8px;font-size:8px}
-.pc-title{font-family:'Playfair Display',serif;font-weight:800;font-size:26px;color:var(--brown-dark);line-height:1.2}
-.pc-title em{font-style:italic;color:var(--brown-mid)}
-
-.pc-prompt{background:var(--cream);padding:24px 28px;border-bottom:1px solid var(--cream-dark)}
-.pc-lbl{font-family:'Montserrat',sans-serif;font-weight:700;font-size:9px;text-transform:uppercase;letter-spacing:3px;color:var(--brown-light);margin-bottom:12px}
-.prompt-topic{display:flex;align-items:center;gap:14px;background:var(--white-warm);border:1px solid var(--cream-dark);border-left:4px solid var(--brown-light);border-radius:0 10px 10px 0;padding:16px 20px;margin-bottom:16px}
-.pt-ico{width:40px;height:40px;min-width:40px;background:var(--brown-dark);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--gold);box-shadow:0 3px 10px rgba(26,15,8,.2)}
-.pt-eye{font-family:'Montserrat',sans-serif;font-weight:700;font-size:8px;text-transform:uppercase;letter-spacing:2.5px;color:var(--brown-light);margin-bottom:3px}
-.pt-name{font-family:'Playfair Display',serif;font-weight:800;font-size:20px;color:var(--brown-dark);line-height:1.15}
-
-.prompt-box{background:var(--obsidian);border-radius:11px;padding:24px 28px;font-family:'Poppins',sans-serif;font-size:12px;color:rgba(253,250,246,.78);line-height:1.9;white-space:pre-wrap;word-break:break-word;border:1px solid rgba(196,154,108,.12)}
-.prompt-box .hl{color:var(--gold);font-weight:500}
-.copy-btn{display:inline-flex;align-items:center;gap:8px;margin-top:14px;background:var(--obsidian);color:var(--white-warm);font-family:'Montserrat',sans-serif;font-weight:700;font-size:10.5px;text-transform:uppercase;letter-spacing:1.5px;padding:10px 20px;border-radius:8px;border:1px solid rgba(196,154,108,.2);cursor:pointer;transition:background .2s,transform .2s;box-shadow:0 2px 10px rgba(26,15,8,.18)}
-.copy-btn:hover{background:var(--brown-rich);transform:translateY(-2px);box-shadow:0 5px 18px rgba(26,15,8,.24)}
-.copy-btn.copied{background:#1e5c38;border-color:rgba(46,196,100,.3)}
+/* post content inner */
+.pc-head{background:var(--ww);padding:24px 28px;border-bottom:1px solid var(--crd)}
+.pc-meta{font-family:'Montserrat',sans-serif;font-weight:700;font-size:9px;text-transform:uppercase;letter-spacing:2px;color:var(--bl);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.pc-new{background:var(--bm);color:var(--ww);padding:2px 8px;border-radius:8px;font-size:8px}
+.pc-title{font-family:'Playfair Display',serif;font-weight:800;font-size:26px;color:var(--bd);line-height:1.2}
+.pc-title em{font-style:italic;color:var(--bm)}
+.pc-prompt{background:var(--cr);padding:24px 28px;border-bottom:1px solid var(--crd)}
+.pc-lbl{font-family:'Montserrat',sans-serif;font-weight:700;font-size:9px;text-transform:uppercase;letter-spacing:3px;color:var(--bl);margin-bottom:12px}
+.pt-banner{display:flex;align-items:center;gap:14px;background:var(--ww);border:1px solid var(--crd);border-left:4px solid var(--bl);border-radius:0 10px 10px 0;padding:16px 20px;margin-bottom:16px}
+.pt-ico{width:40px;height:40px;min-width:40px;background:var(--bd);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--gold);box-shadow:0 3px 10px rgba(26,15,8,.2)}
+.pt-eye{font-family:'Montserrat',sans-serif;font-weight:700;font-size:8px;text-transform:uppercase;letter-spacing:2.5px;color:var(--bl);margin-bottom:3px}
+.pt-name{font-family:'Playfair Display',serif;font-weight:800;font-size:20px;color:var(--bd);line-height:1.15}
+.pbox{background:var(--obs);border-radius:11px;padding:24px 28px;font-size:12px;color:rgba(253,250,246,.78);line-height:1.9;white-space:pre-wrap;word-break:break-word;border:1px solid rgba(196,154,108,.12)}
+.pbox .hl{color:var(--gold);font-weight:500}
+.cpbtn{display:inline-flex;align-items:center;gap:8px;margin-top:14px;background:var(--obs);color:var(--ww);font-family:'Montserrat',sans-serif;font-weight:700;font-size:10.5px;text-transform:uppercase;letter-spacing:1.5px;padding:10px 20px;border-radius:8px;border:1px solid rgba(196,154,108,.2);cursor:pointer;transition:background .2s,transform .2s;box-shadow:0 2px 10px rgba(26,15,8,.18)}
+.cpbtn:hover{background:var(--br);transform:translateY(-2px);box-shadow:0 5px 18px rgba(26,15,8,.24)}
+.cpbtn.cp{background:#1e5c38;border-color:rgba(46,196,100,.3)}
 .ci{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2}
-
-.pc-howto{background:var(--white-warm);padding:24px 28px}
-.howto-lbl{font-family:'Montserrat',sans-serif;font-weight:700;font-size:9px;text-transform:uppercase;letter-spacing:3px;color:var(--brown-light);margin-bottom:18px}
-.howto-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.pc-howto{background:var(--ww);padding:24px 28px}
+.hw-lbl{font-family:'Montserrat',sans-serif;font-weight:700;font-size:9px;text-transform:uppercase;letter-spacing:3px;color:var(--bl);margin-bottom:18px}
+.hw-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-bottom:16px}
 .hc{display:flex;gap:11px;align-items:flex-start}
-.hn{width:25px;height:25px;min-width:25px;background:var(--obsidian);color:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;box-shadow:0 2px 8px rgba(26,15,8,.18);margin-top:1px}
-.ht{font-size:12.5px;color:var(--gray-mid);line-height:1.72}
-.ht strong{color:var(--brown-dark);font-weight:500}
-.dl-box{background:rgba(160,113,79,.07);border-left:3px solid var(--brown-light);border-radius:0 9px 9px 0;padding:14px 18px;margin-top:18px}
-.dl-lbl{font-family:'Montserrat',sans-serif;font-weight:700;font-size:9px;text-transform:uppercase;letter-spacing:2px;color:var(--brown-light);margin-bottom:9px}
-.dl-i{display:flex;gap:8px;font-size:12.5px;color:var(--gray-mid);align-items:flex-start;margin-bottom:5px}
-.dl-dot{width:4px;height:4px;min-width:4px;background:var(--brown-light);border-radius:50%;margin-top:9px}
-
-/* Numbered step rows */
+.hn{width:25px;height:25px;min-width:25px;background:var(--obs);color:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;box-shadow:0 2px 8px rgba(26,15,8,.18);margin-top:1px}
+.ht{font-size:12.5px;color:var(--gm);line-height:1.72}
+.ht strong{color:var(--bd);font-weight:500}
+.dlbox{background:rgba(160,113,79,.07);border-left:3px solid var(--bl);border-radius:0 9px 9px 0;padding:14px 18px}
+.dl-l{font-family:'Montserrat',sans-serif;font-weight:700;font-size:9px;text-transform:uppercase;letter-spacing:2px;color:var(--bl);margin-bottom:9px}
+.dl-i{display:flex;gap:8px;font-size:12.5px;color:var(--gm);align-items:flex-start;margin-bottom:5px}
+.dl-d{width:4px;height:4px;min-width:4px;background:var(--bl);border-radius:50%;margin-top:9px}
 .step-rows{display:flex;flex-direction:column}
-.step-row{display:flex;gap:18px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--cream-dark)}
+.step-row{display:flex;gap:18px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--crd)}
 .step-row:last-child{border-bottom:none}
-.srn{width:30px;height:30px;min-width:30px;background:var(--brown-dark);color:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;box-shadow:0 2px 8px rgba(26,15,8,.2);margin-top:2px}
-.srt{font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--brown-dark);margin-bottom:5px}
-.srd{font-size:13px;color:var(--gray-mid);line-height:1.78}
-.srd strong{color:var(--brown-dark);font-weight:500}
-.tip{background:var(--cream);border-left:3px solid var(--brown-light);border-radius:0 8px 8px 0;padding:10px 14px;margin-top:9px;font-size:12.5px;color:var(--gray-mid);line-height:1.7}
+.srn{width:30px;height:30px;min-width:30px;background:var(--bd);color:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;box-shadow:0 2px 8px rgba(26,15,8,.2);margin-top:2px}
+.srt{font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--bd);margin-bottom:5px}
+.srd{font-size:13px;color:var(--gm);line-height:1.78}
+.srd strong{color:var(--bd);font-weight:500}
+.tip{background:var(--cr);border-left:3px solid var(--bl);border-radius:0 8px 8px 0;padding:10px 14px;margin-top:9px;font-size:12.5px;color:var(--gm);line-height:1.7}
 
-/* SOBRE */
+/* ─ TOOLS SECTION ────────────────── */
+.tools-tabs{display:flex;gap:8px;margin-bottom:36px;flex-wrap:wrap}
+.tab-btn{font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:2px;padding:10px 20px;border-radius:10px;border:1.5px solid var(--crd);background:var(--ww);color:var(--gm);cursor:pointer;transition:all .2s}
+.tab-btn:hover{border-color:var(--bl);color:var(--bl)}
+.tab-btn.active{background:var(--bd);color:var(--ww);border-color:transparent;box-shadow:0 4px 16px rgba(26,15,8,.22)}
+
+.tool-panel{display:none}
+.tool-panel.active{display:block}
+
+.tool-cat-section{margin-bottom:40px}
+.tool-cat-header{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:12px;border-bottom:1.5px solid var(--crd)}
+.tool-cat-icon{width:34px;height:34px;border-radius:9px;background:var(--bd);color:var(--gold);display:flex;align-items:center;justify-content:center}
+.tool-cat-name{font-family:'Montserrat',sans-serif;font-weight:900;font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--bd)}
+.tool-cat-sub{font-size:11px;color:var(--gl);margin-top:1px}
+
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+
+.tool-card{background:var(--ww);border:1px solid var(--crd);border-radius:14px;padding:20px 22px;box-shadow:var(--s1);transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden}
+.tool-card:hover{transform:translateY(-3px);box-shadow:var(--s2)}
+.tool-card.top{border-color:rgba(160,113,79,.45);box-shadow:0 4px 24px rgba(26,15,8,.12),0 0 0 1.5px rgba(160,113,79,.2)}
+.tool-card.top::before{content:'★ Recomendado';position:absolute;top:0;right:0;background:var(--bl);color:var(--ww);font-family:'Montserrat',sans-serif;font-weight:700;font-size:8px;text-transform:uppercase;letter-spacing:1.5px;padding:4px 12px;border-radius:0 0 0 10px}
+
+.tc-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:10px}
+.tc-name{font-family:'Montserrat',sans-serif;font-weight:900;font-size:13px;color:var(--bd);letter-spacing:-.2px}
+.tc-badge{font-family:'Montserrat',sans-serif;font-weight:700;font-size:8px;text-transform:uppercase;letter-spacing:1.5px;padding:3px 9px;border-radius:8px;background:var(--cr);color:var(--bl);border:1px solid var(--crd);white-space:nowrap;margin-top:1px}
+.tool-card.top .tc-badge{background:rgba(160,113,79,.12);border-color:rgba(160,113,79,.3);color:var(--bm)}
+
+.tc-what{font-size:12.5px;color:var(--gd);font-weight:500;margin-bottom:6px;line-height:1.5}
+.tc-when{font-size:12px;color:var(--gm);line-height:1.7;margin-bottom:8px}
+.tc-diff{font-size:11.5px;color:var(--gl);line-height:1.65;border-top:1px solid var(--crd);padding-top:8px;margin-top:8px}
+.tc-diff strong{color:var(--bl);font-weight:600}
+
+/* ─ SOBRE ────────────────────────── */
 .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
-.about-lbl{font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:3px;color:var(--brown-light);margin-bottom:10px}
-.about-name{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(26px,2.8vw,38px);color:var(--brown-dark);line-height:1.15}
-.about-name em{font-style:italic;color:var(--brown-mid)}
-.about-txt{font-size:14.5px;color:var(--gray-mid);line-height:1.9;margin-bottom:14px}
-.about-handle{font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--brown-light);padding:7px 16px;border:1.5px solid var(--brown-light);border-radius:20px;display:inline-block;margin-top:8px}
-.about-card{background:var(--white-warm);border-radius:14px;padding:32px 28px;border:1px solid var(--cream-dark);position:relative;overflow:hidden;box-shadow:var(--sh-sm)}
-.about-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:linear-gradient(to bottom,var(--brown-light),var(--brown-mid));border-radius:2px 0 0 2px}
-.about-q{font-family:'Playfair Display',serif;font-size:17px;font-style:italic;color:var(--brown-dark);line-height:1.65;margin-bottom:22px}
+.about-lbl{font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:3px;color:var(--bl);margin-bottom:10px}
+.about-name{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(26px,2.8vw,38px);color:var(--bd);line-height:1.15}
+.about-name em{font-style:italic;color:var(--bm)}
+.about-txt{font-size:14.5px;color:var(--gm);line-height:1.9;margin-bottom:14px}
+.about-handle{font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--bl);padding:7px 16px;border:1.5px solid var(--bl);border-radius:20px;display:inline-block;margin-top:8px}
+.about-card{background:var(--ww);border-radius:14px;padding:32px 28px;border:1px solid var(--crd);position:relative;overflow:hidden;box-shadow:var(--s1)}
+.about-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:linear-gradient(to bottom,var(--bl),var(--bm));border-radius:2px 0 0 2px}
+.about-q{font-family:'Playfair Display',serif;font-size:17px;font-style:italic;color:var(--bd);line-height:1.65;margin-bottom:22px}
 .pills{display:flex;flex-wrap:wrap;gap:7px}
-.pill{font-family:'Montserrat',sans-serif;font-weight:700;font-size:9.5px;text-transform:uppercase;letter-spacing:1.5px;padding:4px 12px;border-radius:20px;background:var(--brown-dark);color:var(--cream)}
-.pill.o{background:transparent;border:1.5px solid var(--brown-light);color:var(--brown-mid)}
+.pill{font-family:'Montserrat',sans-serif;font-weight:700;font-size:9.5px;text-transform:uppercase;letter-spacing:1.5px;padding:4px 12px;border-radius:20px;background:var(--bd);color:var(--cr)}
+.pill.o{background:transparent;border:1.5px solid var(--bl);color:var(--bm)}
 
-/* COMO USAR CLAUDE */
-.claude-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px}
-.claude-card{background:var(--white-warm);border-radius:13px;padding:24px 22px;border:1px solid var(--cream-dark);box-shadow:var(--sh-sm);transition:transform .2s,box-shadow .2s}
-.claude-card:hover{transform:translateY(-3px);box-shadow:var(--sh-lg)}
-.claude-card.dk{background:var(--obsidian);border-color:transparent;box-shadow:0 4px 22px rgba(26,15,8,.28)}
-.cc-icon{width:36px;height:36px;background:var(--cream-dark);border-radius:9px;display:flex;align-items:center;justify-content:center;color:var(--brown-mid);margin-bottom:12px}
-.claude-card.dk .cc-icon{background:rgba(196,154,108,.12);color:var(--gold)}
-.cc-ttl{font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.8px;color:var(--brown-dark);margin-bottom:6px}
-.claude-card.dk .cc-ttl{color:var(--cream)}
-.cc-txt{font-size:12.5px;color:var(--gray-mid);line-height:1.75}
-.claude-card.dk .cc-txt{color:rgba(253,250,246,.58)}
-.cc-tag{display:inline-block;margin-top:10px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:8.5px;text-transform:uppercase;letter-spacing:1.5px;color:var(--brown-light);background:rgba(160,113,79,.1);border:1px solid rgba(160,113,79,.2);padding:3px 9px;border-radius:8px}
+/* ─ COMO USAR CLAUDE ─────────────── */
+.claude-intro{background:var(--cr);border-left:4px solid var(--bl);border-radius:0 12px 12px 0;padding:18px 22px;margin-bottom:28px;font-size:13.5px;color:var(--gm);line-height:1.8}
+.claude-intro strong{color:var(--bd);font-weight:500}
+.claude-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-bottom:28px}
+.cc{background:var(--ww);border-radius:13px;padding:22px 20px;border:1px solid var(--crd);box-shadow:var(--s1);transition:transform .2s,box-shadow .2s}
+.cc:hover{transform:translateY(-3px);box-shadow:var(--s2)}
+.cc.dk{background:var(--obs);border-color:transparent;box-shadow:0 4px 22px rgba(26,15,8,.28)}
+.cc-ico{width:34px;height:34px;background:var(--crd);border-radius:9px;display:flex;align-items:center;justify-content:center;color:var(--bm);margin-bottom:12px}
+.cc.dk .cc-ico{background:rgba(196,154,108,.12);color:var(--gold)}
+.cc-ttl{font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.8px;color:var(--bd);margin-bottom:6px}
+.cc.dk .cc-ttl{color:var(--cr)}
+.cc-txt{font-size:12.5px;color:var(--gm);line-height:1.75}
+.cc.dk .cc-txt{color:rgba(253,250,246,.58)}
+.cc-tag{display:inline-block;margin-top:10px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:8.5px;text-transform:uppercase;letter-spacing:1.5px;color:var(--bl);background:rgba(160,113,79,.1);border:1px solid rgba(160,113,79,.2);padding:3px 9px;border-radius:8px}
 
-.claude-intro-box{background:var(--cream);border:1px solid var(--cream-dark);border-left:4px solid var(--brown-light);border-radius:0 12px 12px 0;padding:18px 22px;margin-bottom:28px}
-.claude-intro-box p{font-size:13.5px;color:var(--gray-mid);line-height:1.8}
-.claude-intro-box strong{color:var(--brown-dark);font-weight:500}
+/* ─ coming soon ─────────────────── */
+.cs{background:var(--cr);border:1.5px dashed var(--crd);border-radius:14px;padding:36px;text-align:center}
+.cs p{font-family:'Playfair Display',serif;font-size:16px;font-style:italic;color:var(--gl)}
 
-/* coming soon */
-.cs{background:var(--cream);border:1.5px dashed var(--cream-dark);border-radius:14px;padding:36px 32px;text-align:center}
-.cs p{font-family:'Playfair Display',serif;font-size:16px;font-style:italic;color:var(--gray-light)}
-
-/* FOOTER */
-footer{background:var(--obsidian);padding:52px 56px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;position:relative;overflow:hidden}
-footer::before{content:'';position:absolute;bottom:-30px;right:-30px;width:110px;height:110px;border:2px solid rgba(196,154,108,.13);border-radius:14px}
-.f-logo{font-family:'Montserrat',sans-serif;font-weight:900;font-size:19px;color:var(--white-warm);letter-spacing:-.5px;margin-bottom:5px}
+/* ─ FOOTER ──────────────────────── */
+footer{background:var(--obs);padding:52px 60px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;position:relative;overflow:hidden}
+footer::before{content:'';position:absolute;bottom:-30px;right:-30px;width:110px;height:110px;border:2px solid rgba(196,154,108,.12);border-radius:14px}
+.f-logo{font-family:'Montserrat',sans-serif;font-weight:900;font-size:19px;color:var(--ww);letter-spacing:-.5px;margin-bottom:5px}
 .f-logo span{color:var(--gold)}
 .f-sub{font-size:12px;color:rgba(253,250,246,.36);font-weight:300}
 .f-handle{font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--gold);margin-bottom:4px}
@@ -213,13 +209,14 @@ footer::before{content:'';position:absolute;bottom:-30px;right:-30px;width:110px
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
 
-@media (max-width:860px){
+@media(max-width:900px){
   nav{padding:0 20px} .nav-links{display:none}
-  .hero{grid-template-columns:1fr;padding:88px 24px 48px} .hero-right{display:none}
-  .quicknav{padding:0 20px}
-  .sec{padding:52px 24px} .about-grid{grid-template-columns:1fr;gap:32px}
-  .lib-split{grid-template-columns:1fr} .claude-grid{grid-template-columns:1fr}
-  .pc-head,.pc-prompt,.pc-howto{padding:20px} .howto-grid{grid-template-columns:1fr}
+  .hero{padding:90px 24px 48px} .hero-inner{grid-template-columns:1fr}
+  .sec{padding:52px 24px}
+  .lib-split,.about-grid{grid-template-columns:1fr;gap:28px}
+  .hw-grid{grid-template-columns:1fr}
+  .tools-grid{grid-template-columns:1fr}
+  .pc-head,.pc-prompt,.pc-howto{padding:20px}
   footer{padding:36px 24px;flex-direction:column;align-items:flex-start} .f-copy{text-align:left}
 }
 </style>
@@ -231,103 +228,76 @@ footer::before{content:'';position:absolute;bottom:-30px;right:-30px;width:110px
   <a class="nav-logo" href="#">mkt<span>.</span>dica</a>
   <ul class="nav-links">
     <li><a href="#library">Biblioteca</a></li>
+    <li><a href="#ferramentas">Ferramentas</a></li>
     <li><a href="#sobre">Quem é</a></li>
-    <li><a href="#como-usar">Claude</a></li>
+    <li><a href="#claude">Claude</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-corner"></div>
-  <div class="hero-left">
-    <p class="hero-kicker">MKTDica</p>
-    <h1 class="hero-tagline">
-      Te ajudando a acelerar<br>
-      <em>marketing, vendas</em><br>
-      e uso da IA
-    </h1>
-    <div class="hero-accent"></div>
-    <p class="hero-sub">O que eu uso no dia a dia para escalar marketing, vendas e produtividade com IA. Aqui você encontra:</p>
-    <div class="hero-feats">
-      <span class="hero-feat">Prompts reais</span>
-      <span class="hero-feat">Processos testados</span>
-      <span class="hero-feat">Ferramentas que funcionam</span>
+  <div class="hero-dec-tr"></div>
+  <div class="hero-dec-bl"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <p class="hero-kicker">MKTDica</p>
+      <h1 class="hero-title">
+        Te ajudando a acelerar<br>
+        <em>marketing, vendas</em><br>
+        e uso da IA
+      </h1>
+      <div class="hero-line"></div>
+      <p class="hero-sub">O que eu uso no dia a dia para escalar marketing, vendas e produtividade com IA. Aqui você encontra:</p>
+      <div class="hero-tags">
+        <span class="hero-tag">Prompts reais</span>
+        <span class="hero-tag">Processos testados</span>
+        <span class="hero-tag">Ferramentas que funcionam</span>
+      </div>
+    </div>
+
+    <div class="hero-ctas">
+      <a href="#library" class="hero-cta-btn primary">
+        <div class="hcta-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h4"/></svg></div>
+        <div><p class="hcta-lbl">Biblioteca</p><p class="hcta-name">Prompts</p></div>
+        <svg class="hcta-arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#library" class="hero-cta-btn primary">
+        <div class="hcta-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+        <div><p class="hcta-lbl">Guias</p><p class="hcta-name">Passo a passo</p></div>
+        <svg class="hcta-arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#ferramentas" class="hero-cta-btn sec">
+        <div class="hcta-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+        <div><p class="hcta-lbl">Curadoria</p><p class="hcta-name">Ferramentas de IA</p></div>
+        <svg class="hcta-arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
     </div>
   </div>
-  <div class="hero-right">
-    <p class="hero-posts-lbl">Últimas postagens</p>
-    <a href="#post-01" class="hero-post" onclick="openPost('post-01')">
-      <div class="hero-post-cat">Prompt 01 · Instagram <span class="hp-new">Novo</span></div>
-      <p class="hero-post-name">Carrossel 100% por IA</p>
-      <span class="hero-post-arrow">→</span>
-    </a>
-    <a href="#post-02" class="hero-post" onclick="openPost('post-02')">
-      <div class="hero-post-cat">Passo a passo · PowerPoint</div>
-      <p class="hero-post-name">Apresentações com IA no PowerPoint</p>
-      <span class="hero-post-arrow">→</span>
-    </a>
-  </div>
 </section>
-
-<!-- QUICKNAV (sem linha de intro) -->
-<div class="quicknav">
-  <div class="qn-row">
-    <a href="#library" class="qn-primary">
-      <div class="qn-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h4"/></svg></div>
-      <div><p class="qn-lbl">Biblioteca</p><p class="qn-name">Prompts e Passo a passo</p></div>
-      <svg class="qn-arr" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </a>
-    <a href="#sobre" class="qn-sec">
-      <div class="qn-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
-      <div><p class="qn-lbl">Quem é</p><p class="qn-name">MKTDica</p></div>
-      <svg class="qn-arr" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </a>
-    <a href="#como-usar" class="qn-sec">
-      <div class="qn-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
-      <div><p class="qn-lbl">Passo a passo</p><p class="qn-name">Como usar Claude</p></div>
-      <svg class="qn-arr" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </a>
-    <div class="qn-div"></div>
-    <a href="#post-01" class="qn-pill" onclick="openPost('post-01')">
-      <span class="qn-pn">01</span><span class="qn-pt">Carrossel para Instagram</span><span class="qn-pbadge">Novo</span>
-    </a>
-    <a href="#post-02" class="qn-pill" onclick="openPost('post-02')">
-      <span class="qn-pn">02</span><span class="qn-pt">Apresentações no PowerPoint</span>
-    </a>
-    <div class="qn-pill off"><span class="qn-pn">03</span><span class="qn-pt">Em breve</span></div>
-  </div>
-</div>
 
 <!-- 1. BIBLIOTECA -->
 <section class="sec" id="library">
   <div class="reveal">
-    <p class="sec-lbl">Biblioteca</p>
-    <h2 class="sec-ttl">Prompts <em>&amp;</em> Passo a passo</h2>
+    <p class="s-lbl">Biblioteca</p>
+    <h2 class="s-ttl">Prompts <em>&amp;</em> Passo a passo</h2>
   </div>
   <div class="lib-split reveal">
 
-    <!-- COLUNA: PROMPTS -->
+    <!-- Prompts -->
     <div>
       <div class="lib-col-head">
-        <div class="lib-col-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h4"/></svg>
-        </div>
-        <div>
-          <p class="lib-col-ttl">Prompts</p>
-          <p class="lib-col-sub">Copie, preencha e use no Claude</p>
-        </div>
+        <div class="lib-col-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h4"/></svg></div>
+        <div><p class="lib-col-ttl">Prompts</p><p class="lib-col-sub">Copie, preencha e use no Claude</p></div>
       </div>
 
       <div class="post-item featured" id="post-01">
-        <div class="post-row" onclick="togglePost('post-01')">
-          <span class="post-row-num">01</span>
-          <div class="post-row-body">
-            <div class="post-row-meta">Instagram <span class="pr-new">Mais recente</span></div>
-            <p class="post-row-title">Carrossel 100% por IA</p>
+        <div class="post-row" onclick="toggle('post-01')">
+          <span class="prn">01</span>
+          <div class="pr-body">
+            <div class="pr-meta">Instagram <span class="pr-new">Mais recente</span></div>
+            <p class="pr-title">Carrossel 100% por IA</p>
           </div>
-          <div class="post-row-chevron">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
+          <div class="pr-chev"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
         </div>
         <div class="post-content">
           <div class="pc-head">
@@ -336,18 +306,16 @@ footer::before{content:'';position:absolute;bottom:-30px;right:-30px;width:110px
           </div>
           <div class="pc-prompt">
             <p class="pc-lbl">Copie o prompt</p>
-            <div class="prompt-topic">
+            <div class="pt-banner">
               <div class="pt-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h4"/></svg></div>
               <div><p class="pt-eye">Tema do prompt</p><p class="pt-name">Carrossel para Instagram</p></div>
             </div>
-            <div class="prompt-box" id="p01">PROMPT COMPLETO PARA CARROSSEL (INSTAGRAM)
+            <div class="pbox" id="p01">PROMPT COMPLETO PARA CARROSSEL (INSTAGRAM)
 
 <span class="hl">PREENCHA ABAIXO:</span>
 
 CONTEÚDO: [escreva o conteúdo completo ou assunto do carrossel]
-
 QUANTIDADE DE SLIDES: [ex: 6 slides incluindo capa e final]
-
 TOM: [ex: didático / inspiracional / vendas / informativo]
 
 IDENTIDADE VISUAL:
@@ -358,7 +326,6 @@ Handle: @[seu perfil]
 <span class="hl">COMANDOS:</span>
 
 Crie um carrossel completo para o Instagram no formato 1080x1350px considerando as informações acima.
-
 Crie um arquivo HTML para que a pessoa consiga abrir no navegador e baixar as imagens.
 
 Inclua:
@@ -369,105 +336,393 @@ Inclua:
 
 • Alternar entre fundo claro e fundo escuro
 • Headline grande (mínimo 80px) que pare o scroll
-• Subtítulo curto
-• Seta indicando swipe
-• Slides de conteúdo com blocos com ícone + label em caps + descrição e número decorativo grande no canto
-• Slide final com fundo claro, frase de impacto grande e dois botões de CTA
+• Subtítulo curto e seta indicando swipe
+• Slides de conteúdo com blocos ícone + label + descrição e número decorativo grande
+• Slide final com frase de impacto e dois botões de CTA
 
-<span class="hl">REGRAS DE DESIGN OBRIGATÓRIAS:</span>
+<span class="hl">REGRAS DE DESIGN:</span>
 
-• Título da capa: mínimo 80px, peso 800, legível à primeira vista
+• Título da capa: mínimo 80px, peso 800
 • Títulos dos slides: mínimo 44px, com hierarquia clara
 • Alto contraste em todos os textos
 • Cantos decorativos em todos os slides
-• Linha de acento colorida antes de cada título
-• Handle (@perfil) presente no rodapé de todos os slides
+• Handle (@perfil) no rodapé de todos os slides
 • Layout limpo, com bastante espaço em branco
 
 <span class="hl">REGRAS DE LAYOUT (CRÍTICO):</span>
 
 • Todo o conteúdo deve caber 100% dentro do slide, sem cortes
 • Proibido overflow
-• Conteúdo centralizado
-• Espaçamento consistente
-• Não sobrepor textos ou elementos</div>
-            <button class="copy-btn" onclick="copyPrompt('p01',this)">
+• Conteúdo centralizado, espaçamento consistente</div>
+            <button class="cpbtn" onclick="cp('p01',this)">
               <svg class="ci" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
               Copiar prompt
             </button>
           </div>
           <div class="pc-howto">
-            <p class="howto-lbl">Passo a passo · Como criar o carrossel</p>
-            <div class="howto-grid">
+            <p class="hw-lbl">Passo a passo · Como criar o carrossel</p>
+            <div class="hw-grid">
               <div class="hc"><div class="hn">1</div><p class="ht">Acesse <strong>claude.ai</strong> e crie sua conta gratuita</p></div>
-              <div class="hc"><div class="hn">2</div><p class="ht">Copie o prompt usando o botão <strong>"Copiar prompt"</strong></p></div>
-              <div class="hc"><div class="hn">3</div><p class="ht">Preencha com <strong>conteúdo, tom e identidade visual</strong></p></div>
+              <div class="hc"><div class="hn">2</div><p class="ht">Copie o prompt usando o botão acima</p></div>
+              <div class="hc"><div class="hn">3</div><p class="ht">Preencha <strong>conteúdo, tom e identidade visual</strong></p></div>
               <div class="hc"><div class="hn">4</div><p class="ht">Cole no Claude e pressione <strong>Enter</strong></p></div>
             </div>
-            <div class="dl-box">
-              <p class="dl-lbl">Como baixar as imagens</p>
-              <div class="dl-i"><div class="dl-dot"></div><span>Clique em <strong>"Abrir no navegador"</strong> no arquivo gerado (use Chrome)</span></div>
-              <div class="dl-i"><div class="dl-dot"></div><span>Clique em <strong>"Baixar todos os slides"</strong></span></div>
-              <div class="dl-i"><div class="dl-dot"></div><span>PNGs salvos em <strong>Downloads</strong></span></div>
-              <div class="dl-i"><div class="dl-dot"></div><span>Importe no Instagram na ordem e publique</span></div>
+            <div class="dlbox" style="margin-top:16px">
+              <p class="dl-l">Como baixar as imagens</p>
+              <div class="dl-i"><div class="dl-d"></div><span>Clique em <strong>"Abrir no navegador"</strong> no arquivo gerado (use Chrome)</span></div>
+              <div class="dl-i"><div class="dl-d"></div><span>Clique em <strong>"Baixar todos os slides"</strong></span></div>
+              <div class="dl-i"><div class="dl-d"></div><span>PNGs salvos em <strong>Downloads</strong>. Importe no Instagram e publique</span></div>
             </div>
           </div>
         </div>
       </div>
-
       <div class="cs"><p>Mais prompts chegando em breve</p></div>
     </div>
 
-    <!-- COLUNA: PASSO A PASSO -->
+    <!-- Passo a passo -->
     <div>
       <div class="lib-col-head">
-        <div class="lib-col-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-        </div>
-        <div>
-          <p class="lib-col-ttl">Passo a passo</p>
-          <p class="lib-col-sub">Guias práticos para usar IA</p>
-        </div>
+        <div class="lib-col-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+        <div><p class="lib-col-ttl">Passo a passo</p><p class="lib-col-sub">Guias práticos para usar IA</p></div>
       </div>
 
       <div class="post-item featured" id="post-02">
-        <div class="post-row" onclick="togglePost('post-02')">
-          <span class="post-row-num">01</span>
-          <div class="post-row-body">
-            <div class="post-row-meta">PowerPoint <span class="pr-new">Mais recente</span></div>
-            <p class="post-row-title">Apresentações com IA no PowerPoint</p>
+        <div class="post-row" onclick="toggle('post-02')">
+          <span class="prn">01</span>
+          <div class="pr-body">
+            <div class="pr-meta">PowerPoint <span class="pr-new">Mais recente</span></div>
+            <p class="pr-title">Apresentações com IA no PowerPoint</p>
           </div>
-          <div class="post-row-chevron">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
+          <div class="pr-chev"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
         </div>
         <div class="post-content">
           <div class="pc-head">
             <p class="pc-meta">Passo a passo · PowerPoint <span class="pc-new">Mais recente</span></p>
-            <h3 class="pc-title">Como criar ou melhorar Apresentações<br><em>100% com IA no PowerPoint</em></h3>
+            <h3 class="pc-title">Apresentações<br><em>100% com IA no PowerPoint</em></h3>
           </div>
           <div class="pc-howto">
-            <p class="howto-lbl">Passo a passo</p>
+            <p class="hw-lbl">Passo a passo</p>
             <div class="step-rows">
-              <div class="step-row"><div class="srn">1</div><div><p class="srt">Acesse o PowerPoint</p><p class="srd">Abra o PowerPoint na versão desktop (Windows/Mac) ou acesse pelo navegador em <strong>office.com</strong> com seu login Microsoft 365.</p><div class="tip">Sem o Office instalado? Use <strong>office.com</strong> no navegador, funciona da mesma forma.</div></div></div>
-              <div class="step-row"><div class="srn">2</div><div><p class="srt">Abra a loja de suplementos</p><p class="srd">No menu superior, clique em <strong>Inserir</strong> e depois em <strong>Suplementos</strong> (ou "Add-ins"). Uma janela com o marketplace da Microsoft será aberta.</p></div></div>
-              <div class="step-row"><div class="srn">3</div><div><p class="srt">Pesquise e instale o Claude</p><p class="srd">Na barra de busca, digite <strong>Claude</strong>. Localize o suplemento da Anthropic e clique em <strong>Adicionar</strong>. Instalação imediata e gratuita, basta ter uma conta Anthropic (plano Free ou Pro).</p><div class="tip">O suplemento fica fixado no painel lateral direito do PowerPoint.</div></div></div>
-              <div class="step-row"><div class="srn">4</div><div><p class="srt">Autentique com sua conta Anthropic</p><p class="srd">Ao abrir o painel do Claude pela primeira vez, será solicitado login. Use a mesma conta que você acessa o <strong>claude.ai</strong>.</p></div></div>
-              <div class="step-row"><div class="srn">5</div><div><p class="srt">Comece a criar</p><p class="srd">Com o painel aberto, digite comandos diretamente. O Claude cria novos conteúdos, edita slides prontos e estrutura apresentações completas.</p><div class="tip"><strong>Exemplos de comando:</strong><br>"Crie uma apresentação sobre Marketing na era da IA"<br>"Crie uma apresentação para a empresa @MKTDICA www.mktdica.br"<br>"Melhore as cores do slide 4 e altere o conteúdo para Conheça o @MKTDICA"</div></div></div>
-              <div class="step-row"><div class="srn">6</div><div><p class="srt">Aplique e ajuste</p><p class="srd">O Claude entregará os slides prontos. Para ajustes, basta dar os comandos no chat no canto direito.</p><div class="tip"><strong>Exemplo:</strong> "Altere as cores do slide 4 e mude o conteúdo para Conheça o @MKTDICA"</div></div></div>
+              <div class="step-row"><div class="srn">1</div><div><p class="srt">Acesse o PowerPoint</p><p class="srd">Abra o PowerPoint na versão desktop ou em <strong>office.com</strong> com seu login Microsoft 365.</p><div class="tip">Sem o Office? Use <strong>office.com</strong> no navegador.</div></div></div>
+              <div class="step-row"><div class="srn">2</div><div><p class="srt">Abra a loja de suplementos</p><p class="srd">Menu <strong>Inserir &gt; Suplementos</strong> (ou Add-ins). Uma janela com o marketplace da Microsoft abrirá.</p></div></div>
+              <div class="step-row"><div class="srn">3</div><div><p class="srt">Pesquise e instale o Claude</p><p class="srd">Digite <strong>Claude</strong> na busca. Clique em <strong>Adicionar</strong>. Gratuito com conta Anthropic (Free ou Pro).</p><div class="tip">O suplemento fica fixado no painel lateral direito do PowerPoint.</div></div></div>
+              <div class="step-row"><div class="srn">4</div><div><p class="srt">Autentique com sua conta</p><p class="srd">Use a mesma conta que você acessa o <strong>claude.ai</strong>. Após login, o painel estará pronto.</p></div></div>
+              <div class="step-row"><div class="srn">5</div><div><p class="srt">Comece a criar</p><p class="srd">Digite comandos diretamente no painel. O Claude cria conteúdos, edita slides e estrutura apresentações completas.</p><div class="tip"><strong>Exemplos:</strong><br>"Crie uma apresentação sobre Marketing na era da IA"<br>"Melhore as cores do slide 4 e altere para Conheça o @MKTDICA"</div></div></div>
+              <div class="step-row"><div class="srn">6</div><div><p class="srt">Aplique e ajuste</p><p class="srd">O Claude entrega slides prontos. Para ajustes, basta dar comandos no chat lateral.</p></div></div>
             </div>
-            <div style="margin-top:20px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--brown-light)">@MKTDICA</div>
+            <div style="margin-top:20px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--bl)">@MKTDICA</div>
           </div>
         </div>
       </div>
-
       <div class="cs"><p>Mais guias chegando em breve</p></div>
     </div>
   </div>
 </section>
 
-<!-- 2. SOBRE -->
-<section class="sec alt" id="sobre">
+<!-- 2. FERRAMENTAS -->
+<section class="sec alt" id="ferramentas">
+  <div class="reveal">
+    <p class="s-lbl">Curadoria</p>
+    <h2 class="s-ttl">Ferramentas <em>para usar</em></h2>
+  </div>
+
+  <div class="tools-tabs reveal">
+    <button class="tab-btn active" onclick="showTab('criacao')">Criação de Conteúdo</button>
+    <button class="tab-btn" onclick="showTab('marketing')">Marketing e Negócios</button>
+    <button class="tab-btn" onclick="showTab('vendas')">Vendas e Atendimento</button>
+  </div>
+
+  <!-- TAB: CRIAÇÃO -->
+  <div class="tool-panel active" id="tab-criacao">
+
+    <div class="tool-cat-section">
+      <div class="tool-cat-header">
+        <div class="tool-cat-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+        <div><p class="tool-cat-name">Criação de Imagens</p><p class="tool-cat-sub">Gera e edita imagens com IA</p></div>
+      </div>
+      <div class="tools-grid">
+        <div class="tool-card top">
+          <div class="tc-top"><span class="tc-name">Midjourney</span><span class="tc-badge">Criação artística</span></div>
+          <p class="tc-what">Gera ilustrações criativas e imagens de alto impacto visual.</p>
+          <p class="tc-when">Use quando precisar de artes únicas, imagens de campanha ou visual de marca com estilo próprio.</p>
+          <p class="tc-diff"><strong>Diferencial:</strong> qualidade artística incomparável, controle de estilo e composição via prompt detalhado.</p>
+        </div>
+        <div class="tool-card">
+          <div class="tc-top"><span class="tc-name">Gemini</span><span class="tc-badge">Geração rápida</span></div>
+          <p class="tc-what">Gera e analisa imagens diretamente do briefing com velocidade.</p>
+          <p class="tc-when">Use quando precisar de imagens rápidas a partir de um contexto ou documento que você já tem.</p>
+          <p class="tc-diff"><strong>Diferencial:</strong> integrado ao ecossistema Google, lê contextos e gera com agilidade.</p>
+        </div>
+        <div class="tool-card">
+          <div class="tc-top"><span class="tc-name">Nanobubba</span><span class="tc-badge">Edição e ajuste</span></div>
+          <p class="tc-what">Edita e refina imagens existentes: cores, tamanho, elementos.</p>
+          <p class="tc-when">Use para polir imagens geradas, ajustar elementos e adaptar para diferentes formatos.</p>
+          <p class="tc-diff"><strong>Diferencial:</strong> foco em edição não-destrutiva, ideal para quem já tem uma base visual e quer refinar.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-cat-section">
+      <div class="tool-cat-header">
+        <div class="tool-cat-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+        <div><p class="tool-cat-name">Criação de Vídeos</p><p class="tool-cat-sub">Do roteiro ao corte final com IA</p></div>
+      </div>
+      <div class="tools-grid">
+        <div class="tool-card top">
+          <div class="tc-top"><span class="tc-name">Veo 3</span><span class="tc-badge">Vídeos realistas</span></div>
+          <p class="tc-what">Gera vídeos realistas a partir de texto com altíssima qualidade.</p>
+          <p class="tc-when">Use para criar vídeos de produto, demonstrações ou conteúdo visual com poucos cliques.</p>
+          <p class="tc-diff"><strong>Diferencial:</strong> qualidade cinematográfica, entende contexto narrativo e gera movimento fluido.</p>
+        </div>
+        <div class="tool-card">
+          <div class="tc-top"><span class="tc-name">Runway</span><span class="tc-badge">Edição profissional</span></div>
+          <p class="tc-what">Edita vídeos com efeitos, transições e acabamento profissional.</p>
+          <p class="tc-when">Use para polir vídeos gerados, adicionar trilha, efeitos e dar acabamento premium.</p>
+          <p class="tc-diff"><strong>Diferencial:</strong> ferramentas de edição com IA embutida, controle preciso de cenas e efeitos.</p>
+        </div>
+        <div class="tool-card">
+          <div class="tc-top"><span class="tc-name">Kling AI</span><span class="tc-badge">Reels e TikTok</span></div>
+          <p class="tc-what">Gera vídeos curtos e dinâmicos com movimento fluido.</p>
+          <p class="tc-when">Use para Reels, TikTok e conteúdo vertical de alta frequência.</p>
+          <p class="tc-diff"><strong>Diferencial:</strong> velocidade de geração e otimização nativa para formatos mobile verticais.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-cat-section">
+      <div class="tool-cat-header">
+        <div class="tool-cat-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <div><p class="tool-cat-name">Apresentações</p><p class="tool-cat-sub">Do briefing ao deck em minutos</p></div>
+      </div>
+      <div class="tools-grid">
+        <div class="tool-card top">
+          <div class="tc-top"><span class="tc-name">Claude + PowerPoint</span><span class="tc-badge">Controle total</span></div>
+          <p class="tc-what">Cria e edita slides diretamente dentro do PowerPoint via suplemento.</p>
+          <p class="tc-when">Use quando precisar de slides com conteúdo estratégico e precisão, mantendo seu template corporativo.</p>
+          <p class="tc-diff"><strong>Diferencial:</strong> entende contexto do negócio, raciocínio profundo e edição direta no arquivo.</p>
+        </div>
+        <div class="tool-card">
+          <div class="tc-top"><span class="tc-name">Gamma</span><span class="tc-badge">Rapidez</span></div>
+          <p class="tc-what">Cria slides e decks completos automaticamente com design pronto.</p>
+          <p class="tc-when">Use quando precisar de uma apresentação rápida com design pré-formatado.</p>
+          <p class="tc-diff"><strong>Diferencial:</strong> velocidade extrema, layouts automáticos e exportação simples.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-cat-section">
+      <div class="tool-cat-header">
+        <div class="tool-cat-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
+        <div><p class="tool-cat-name">Áudio e Voz</p><p class="tool-cat-sub">Som profissional sem estúdio</p></div>
+      </div>
+      <div class="tools-grid">
+        <div class="tool-card top">
+          <div class="tc-top"><span class="tc-name">ElevenLabs</span><span class="tc-badge">Narração</span></div>
+          <p class="tc-what">Gera vozes naturais em vários idiomas para narração e locução.</p>
+          <p class="tc-when">Use para narrar vídeos, podcasts, audiobooks e conteúdo educacional com qualidade profissional.</p>
+          <p class="tc-diff"><strong>Diferencial:</strong> as vozes mais naturais do mercado, clonagem de voz e múltiplos idiomas.</p>
+        </div>
+        <div class="tool-card">
+          <div class="tc-top"><span class="tc-name">Suno</span><span class="tc-badge">Trilhas sonoras</span></div>
+          <p class="tc-what">Gera músicas originais com IA a partir de um prompt ou tema.</p>
+          <p class="tc-when">Use para criar trilhas sonoras únicas para vídeos, reels e podcasts.</p>
+          <p class="tc-diff"><strong>Diferencial:</strong> músicas completas com letra e instrumentação, personalizáveis por estilo e mood.</p>
+        </div>
+        <div class="tool-card">
+          <div class="tc-top"><span class="tc-name">Murf.AI</span><span class="tc-badge">Apresentações</span></div>
+          <p class="tc-what">Síntese de fala com várias vozes para vídeos e apresentações.</p>
+          <p class="tc-when">Use para vídeos educacionais, tutoriais e apresentações com narração automatizada.</p>
+          <p class="tc-diff"><strong>Diferencial:</strong> interface simples, integração com slides e múltiplas vozes em português.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-cat-section" style="margin-bottom:0">
+      <div class="tool-cat-header">
+        <div class="tool-cat-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+        <div><p class="tool-cat-name">Texto, Copy e Estratégia</p><p class="tool-cat-sub">Qual LLM usar em cada situação</p></div>
+      </div>
+      <div class="tools-grid">
+        <div class="tool-card top">
+          <div class="tc-top"><span class="tc-name">Claude</span><span class="tc-badge">Redação estratégica</span></div>
+          <p class="tc-what">Textos longos, copywriting completo e raciocínio profundo.</p>
+          <p class="tc-when">Use para estratégia de conteúdo, redação estruturada, análise e documentos corporativos.</p>
+          <p class="tc-diff"><strong>Diferencial:</strong> melhor raciocínio do mercado, contexto longo e precisão estratégica.</p>
+        </div>
+        <div class="tool-card">
+          <div class="tc-top"><span class="tc-name">ChatGPT</span><span class="tc-badge">Brainstorm</span></div>
+          <p class="tc-what">Versátil para ideação, roteiros e textos dinâmicos.</p>
+          <p class="tc-when">Use para brainstorms rápidos, roteiros de vídeo e geração de ideias em volume.</p>
+          <p class="tc-diff"><strong>Diferencial:</strong> velocidade, versatilidade e grande base de plugins e integrações.</p>
+        </div>
+        <div class="tool-card">
+          <div class="tc-top"><span class="tc-name">Gemini</span><span class="tc-badge">Pesquisa em tempo real</span></div>
+          <p class="tc-what">Geração de conteúdo com dados atualizados e referências recentes.</p>
+          <p class="tc-when">Use quando precisar de dados atuais, notícias recentes ou conteúdo baseado em fontes verificadas.</p>
+          <p class="tc-diff"><strong>Diferencial:</strong> acesso à internet em tempo real integrado ao ecossistema Google Workspace.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- TAB: MARKETING -->
+  <div class="tool-panel" id="tab-marketing">
+
+    <div class="tool-cat-section">
+      <div class="tool-cat-header">
+        <div class="tool-cat-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+        <div><p class="tool-cat-name">Copy e Conteúdo</p><p class="tool-cat-sub">Textos, posts e roteiros</p></div>
+      </div>
+      <div class="tools-grid">
+        <div class="tool-card top"><div class="tc-top"><span class="tc-name">Claude</span><span class="tc-badge">Estratégico</span></div><p class="tc-what">Redação longa, copywriting e estratégia de conteúdo.</p><p class="tc-when">Para textos corporativos, propostas e conteúdo de alta profundidade.</p><p class="tc-diff"><strong>Diferencial:</strong> raciocínio profundo e precisão estratégica únicos no mercado.</p></div>
+        <div class="tool-card top"><div class="tc-top"><span class="tc-name">ChatGPT</span><span class="tc-badge">Versátil</span></div><p class="tc-what">Geração rápida de textos, posts e roteiros variados.</p><p class="tc-when">Para brainstorm, volume de conteúdo e criação em velocidade.</p><p class="tc-diff"><strong>Diferencial:</strong> ecossistema de plugins e velocidade de geração.</p></div>
+        <div class="tool-card"><div class="tc-top"><span class="tc-name">Copy.ai</span><span class="tc-badge">Marketing</span></div><p class="tc-what">Focado em copy de marketing: ads, emails, landing pages.</p><p class="tc-when">Para campanhas com múltiplas variações de copy em escala.</p><p class="tc-diff"><strong>Diferencial:</strong> templates pré-prontos para marketing digital e testes A/B.</p></div>
+        <div class="tool-card"><div class="tc-top"><span class="tc-name">Jasper</span><span class="tc-badge">Times</span></div><p class="tc-what">Plataforma colaborativa de criação de conteúdo para equipes.</p><p class="tc-when">Para times de marketing que precisam de consistência de voz de marca.</p><p class="tc-diff"><strong>Diferencial:</strong> Brand Voice e fluxos de aprovação para equipes.</p></div>
+      </div>
+    </div>
+
+    <div class="tool-cat-section">
+      <div class="tool-cat-header">
+        <div class="tool-cat-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
+        <div><p class="tool-cat-name">SEO e Blog</p><p class="tool-cat-sub">Otimiza conteúdo para busca</p></div>
+      </div>
+      <div class="tools-grid">
+        <div class="tool-card top"><div class="tc-top"><span class="tc-name">Surfer SEO</span><span class="tc-badge">Otimização</span></div><p class="tc-what">Analisa e otimiza conteúdo para ranquear no Google.</p><p class="tc-when">Para artigos de blog, landing pages e conteúdo orgânico.</p><p class="tc-diff"><strong>Diferencial:</strong> editor com score em tempo real e análise competitiva integrada.</p></div>
+        <div class="tool-card top"><div class="tc-top"><span class="tc-name">SEMrush AI</span><span class="tc-badge">Pesquisa</span></div><p class="tc-what">Pesquisa de palavras-chave, análise de concorrentes e auditoria.</p><p class="tc-when">Para estratégia completa de SEO e análise de mercado digital.</p><p class="tc-diff"><strong>Diferencial:</strong> dados mais completos do mercado, abrangendo SEO, SEM e social.</p></div>
+        <div class="tool-card"><div class="tc-top"><span class="tc-name">Ahrefs AI</span><span class="tc-badge">Backlinks</span></div><p class="tc-what">Análise de backlinks, autoridade de domínio e oportunidades.</p><p class="tc-when">Para link building e análise de autoridade de domínio.</p><p class="tc-diff"><strong>Diferencial:</strong> maior base de dados de backlinks do mercado.</p></div>
+      </div>
+    </div>
+
+    <div class="tool-cat-section">
+      <div class="tool-cat-header">
+        <div class="tool-cat-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></div>
+        <div><p class="tool-cat-name">Social Media</p><p class="tool-cat-sub">Agenda, cria e analisa redes sociais</p></div>
+      </div>
+      <div class="tools-grid">
+        <div class="tool-card top"><div class="tc-top"><span class="tc-name">Metricool</span><span class="tc-badge">Gestão completa</span></div><p class="tc-what">Agenda posts, analisa resultados e monitora concorrentes.</p><p class="tc-when">Para gestão centralizada de múltiplos perfis e relatórios automatizados.</p><p class="tc-diff"><strong>Diferencial:</strong> melhor custo-benefício do mercado, com análises detalhadas e agendamento multi-rede.</p></div>
+        <div class="tool-card"><div class="tc-top"><span class="tc-name">Predis.ai</span><span class="tc-badge">Criação</span></div><p class="tc-what">Cria conteúdo visual e copy para redes sociais automaticamente.</p><p class="tc-when">Para criar posts visuais com copy otimizada em escala.</p><p class="tc-diff"><strong>Diferencial:</strong> geração de carrosséis e vídeos diretamente na plataforma.</p></div>
+        <div class="tool-card"><div class="tc-top"><span class="tc-name">Buffer AI</span><span class="tc-badge">Publicação</span></div><p class="tc-what">Agendamento inteligente com sugestão de horários e copy.</p><p class="tc-when">Para publicação otimizada com análise de melhores horários.</p><p class="tc-diff"><strong>Diferencial:</strong> simplicidade de uso e integração nativa com IA para sugestões de copy.</p></div>
+      </div>
+    </div>
+
+    <div class="tool-cat-section">
+      <div class="tool-cat-header">
+        <div class="tool-cat-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="22" height="18" rx="2"/><path d="M1 9h22"/></svg></div>
+        <div><p class="tool-cat-name">E-mail Marketing</p><p class="tool-cat-sub">Automatiza e personaliza emails</p></div>
+      </div>
+      <div class="tools-grid">
+        <div class="tool-card top"><div class="tc-top"><span class="tc-name">ActiveCampaign</span><span class="tc-badge">Automação</span></div><p class="tc-what">CRM + email marketing com automações avançadas e IA.</p><p class="tc-when">Para fluxos de nutrição complexos, segmentação avançada e vendas por email.</p><p class="tc-diff"><strong>Diferencial:</strong> melhor motor de automação do mercado para médias empresas.</p></div>
+        <div class="tool-card top"><div class="tc-top"><span class="tc-name">Klaviyo AI</span><span class="tc-badge">E-commerce</span></div><p class="tc-what">Email marketing focado em e-commerce com personalização profunda.</p><p class="tc-when">Para lojas online que precisam de segmentação por comportamento de compra.</p><p class="tc-diff"><strong>Diferencial:</strong> integração nativa com Shopify e personalização baseada em dados de compra.</p></div>
+        <div class="tool-card"><div class="tc-top"><span class="tc-name">Brevo</span><span class="tc-badge">Custo-benefício</span></div><p class="tc-what">Email, SMS e WhatsApp marketing em uma plataforma.</p><p class="tc-when">Para empresas que precisam de comunicação multicanal com custo controlado.</p><p class="tc-diff"><strong>Diferencial:</strong> melhor custo-benefício do mercado com multicanalidade integrada.</p></div>
+      </div>
+    </div>
+
+    <div class="tool-cat-section">
+      <div class="tool-cat-header">
+        <div class="tool-cat-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 014-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg></div>
+        <div><p class="tool-cat-name">Automação</p><p class="tool-cat-sub">Conecta apps e automatiza fluxos</p></div>
+      </div>
+      <div class="tools-grid">
+        <div class="tool-card top"><div class="tc-top"><span class="tc-name">Make</span><span class="tc-badge">Visual e poderoso</span></div><p class="tc-what">Plataforma visual de automação para conectar centenas de apps.</p><p class="tc-when">Para automações complexas com lógica condicional e múltiplas integrações.</p><p class="tc-diff"><strong>Diferencial:</strong> interface visual mais intuitiva do mercado com custo menor que concorrentes.</p></div>
+        <div class="tool-card top"><div class="tc-top"><span class="tc-name">Zapier AI</span><span class="tc-badge">Facilidade</span></div><p class="tc-what">Automação simples com mais de 6.000 integrações disponíveis.</p><p class="tc-when">Para automações simples e rápidas sem necessidade de lógica complexa.</p><p class="tc-diff"><strong>Diferencial:</strong> maior ecossistema de integrações e facilidade para iniciantes.</p></div>
+        <div class="tool-card"><div class="tc-top"><span class="tc-name">n8n</span><span class="tc-badge">Open source</span></div><p class="tc-what">Plataforma de automação open source com controle total.</p><p class="tc-when">Para empresas técnicas que precisam de hospedagem própria e customização completa.</p><p class="tc-diff"><strong>Diferencial:</strong> código aberto, gratuito para self-host e sem limites de operações.</p></div>
+      </div>
+    </div>
+
+    <div class="tool-cat-section" style="margin-bottom:0">
+      <div class="tool-cat-header">
+        <div class="tool-cat-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+        <div><p class="tool-cat-name">Dados e Métricas</p><p class="tool-cat-sub">Interpreta resultados com IA</p></div>
+      </div>
+      <div class="tools-grid">
+        <div class="tool-card top"><div class="tc-top"><span class="tc-name">Looker</span><span class="tc-badge">Dashboards</span></div><p class="tc-what">Business intelligence com dashboards e relatórios avançados.</p><p class="tc-when">Para times que precisam de dados em tempo real e visualizações corporativas.</p><p class="tc-diff"><strong>Diferencial:</strong> integração nativa Google e capacidade de análise em escala empresarial.</p></div>
+        <div class="tool-card"><div class="tc-top"><span class="tc-name">Tableau AI</span><span class="tc-badge">Visualização</span></div><p class="tc-what">Visualização de dados avançada com storytelling e IA.</p><p class="tc-when">Para apresentação de dados complexos de forma visual e impactante.</p><p class="tc-diff"><strong>Diferencial:</strong> as visualizações mais sofisticadas do mercado para dados de negócio.</p></div>
+        <div class="tool-card"><div class="tc-top"><span class="tc-name">GA4 com IA</span><span class="tc-badge">Web analytics</span></div><p class="tc-what">Analytics com insights automáticos e predição de comportamento.</p><p class="tc-when">Para análise de tráfego, conversões e comportamento de usuário no site.</p><p class="tc-diff"><strong>Diferencial:</strong> gratuito, integrado ao Google Ads e com modelos preditivos nativos.</p></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- TAB: VENDAS -->
+  <div class="tool-panel" id="tab-vendas">
+
+    <div class="tool-cat-section">
+      <div class="tool-cat-header">
+        <div class="tool-cat-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.07 11.5a19.79 19.79 0 01-3.07-8.67A2 2 0 013.18 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 8.96a16 16 0 006.13 6.13l1.32-1.32a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></div>
+        <div><p class="tool-cat-name">Agentes WhatsApp</p><p class="tool-cat-sub">IAs que atendem pelo WhatsApp</p></div>
+      </div>
+      <div class="tools-grid">
+        <div class="tool-card top"><div class="tc-top"><span class="tc-name">ManyChat</span><span class="tc-badge">Recomendado</span></div><p class="tc-what">Automação de WhatsApp e Instagram com fluxos visuais e IA.</p><p class="tc-when">Para atendimento automatizado, captura de leads e vendas pelo WhatsApp.</p><p class="tc-diff"><strong>Diferencial:</strong> melhor integração WhatsApp + Instagram + Messenger em uma plataforma.</p></div>
+        <div class="tool-card"><div class="tc-top"><span class="tc-name">Typebot</span><span class="tc-badge">Flexível</span></div><p class="tc-what">Criador de chatbots visuais com lógica avançada e integrações.</p><p class="tc-when">Para criar bots personalizados com lógica complexa e integrações customizadas.</p><p class="tc-diff"><strong>Diferencial:</strong> open source, flexibilidade total e custo controlado.</p></div>
+        <div class="tool-card"><div class="tc-top"><span class="tc-name">Z-API</span><span class="tc-badge">Integração</span></div><p class="tc-what">API para integração do WhatsApp com sistemas próprios.</p><p class="tc-when">Para empresas que precisam integrar WhatsApp com CRM ou sistema próprio.</p><p class="tc-diff"><strong>Diferencial:</strong> API brasileira robusta com suporte local e preço acessível.</p></div>
+      </div>
+    </div>
+
+    <div class="tool-cat-section">
+      <div class="tool-cat-header">
+        <div class="tool-cat-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <div><p class="tool-cat-name">CRM com IA</p><p class="tool-cat-sub">Gestão e automação do pipeline</p></div>
+      </div>
+      <div class="tools-grid">
+        <div class="tool-card top"><div class="tc-top"><span class="tc-name">HubSpot AI</span><span class="tc-badge">Completo</span></div><p class="tc-what">CRM completo com IA para marketing, vendas e atendimento.</p><p class="tc-when">Para empresas que querem um ecossistema integrado de marketing e vendas.</p><p class="tc-diff"><strong>Diferencial:</strong> melhor plataforma all-in-one do mercado, gratuito até certo volume.</p></div>
+        <div class="tool-card"><div class="tc-top"><span class="tc-name">Pipedrive AI</span><span class="tc-badge">Vendas</span></div><p class="tc-what">CRM focado em pipeline de vendas com automações e IA.</p><p class="tc-when">Para times de vendas que precisam de gestão visual do pipeline.</p><p class="tc-diff"><strong>Diferencial:</strong> interface mais intuitiva do mercado especificamente para vendas.</p></div>
+        <div class="tool-card"><div class="tc-top"><span class="tc-name">RD Station</span><span class="tc-badge">Brasil</span></div><p class="tc-what">CRM e marketing digital focado no mercado brasileiro.</p><p class="tc-when">Para empresas brasileiras que precisam de suporte local e conformidade com LGPD.</p><p class="tc-diff"><strong>Diferencial:</strong> melhor solução nacional com integração total ao ecossistema de marketing digital BR.</p></div>
+      </div>
+    </div>
+
+    <div class="tool-cat-section">
+      <div class="tool-cat-header">
+        <div class="tool-cat-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
+        <div><p class="tool-cat-name">Prospecção</p><p class="tool-cat-sub">Encontra e qualifica leads com IA</p></div>
+      </div>
+      <div class="tools-grid">
+        <div class="tool-card top"><div class="tc-top"><span class="tc-name">Apollo.io</span><span class="tc-badge">Base de dados</span></div><p class="tc-what">Plataforma de prospecção com base de mais de 275M de contatos.</p><p class="tc-when">Para encontrar e qualificar leads B2B com dados de contato verificados.</p><p class="tc-diff"><strong>Diferencial:</strong> maior base de dados B2B com IA para scoring e sequências automáticas.</p></div>
+        <div class="tool-card top"><div class="tc-top"><span class="tc-name">Clay</span><span class="tc-badge">Enriquecimento</span></div><p class="tc-what">Enriquece dados de leads com dezenas de fontes automaticamente.</p><p class="tc-when">Para criar listas ultrapersonalizadas com dados enriquecidos para outreach.</p><p class="tc-diff"><strong>Diferencial:</strong> combina múltiplas fontes de dados e usa IA para escrever mensagens personalizadas em escala.</p></div>
+        <div class="tool-card"><div class="tc-top"><span class="tc-name">Hunter.io</span><span class="tc-badge">Emails</span></div><p class="tc-what">Encontra e verifica endereços de email corporativos.</p><p class="tc-when">Para encontrar o email correto de decisores em empresas-alvo.</p><p class="tc-diff"><strong>Diferencial:</strong> verificação em tempo real e extensão Chrome para LinkedIn.</p></div>
+      </div>
+    </div>
+
+    <div class="tool-cat-section">
+      <div class="tool-cat-header">
+        <div class="tool-cat-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="22" height="18" rx="2"/><path d="M1 9h22"/></svg></div>
+        <div><p class="tool-cat-name">E-mail de Vendas</p><p class="tool-cat-sub">Escreve e automatiza cold emails</p></div>
+      </div>
+      <div class="tools-grid">
+        <div class="tool-card top"><div class="tc-top"><span class="tc-name">Smartlead</span><span class="tc-badge">Deliverability</span></div><p class="tc-what">Plataforma de cold email com warm-up automático e múltiplas caixas.</p><p class="tc-when">Para enviar cold emails em escala com alta taxa de entrega.</p><p class="tc-diff"><strong>Diferencial:</strong> melhor sistema de aquecimento de caixas de email e rotação automática.</p></div>
+        <div class="tool-card"><div class="tc-top"><span class="tc-name">Lavender</span><span class="tc-badge">Qualidade</span></div><p class="tc-what">IA que analisa e melhora seus emails de vendas em tempo real.</p><p class="tc-when">Para melhorar a qualidade de cada email antes de enviar.</p><p class="tc-diff"><strong>Diferencial:</strong> feedback em tempo real sobre taxa de resposta esperada e personalização.</p></div>
+        <div class="tool-card"><div class="tc-top"><span class="tc-name">Reply.io</span><span class="tc-badge">Sequências</span></div><p class="tc-what">Sequências multicanal automáticas: email, LinkedIn e WhatsApp.</p><p class="tc-when">Para cadências de outreach em múltiplos canais com personalização.</p><p class="tc-diff"><strong>Diferencial:</strong> automação multicanal com IA generativa para personalização em massa.</p></div>
+      </div>
+    </div>
+
+    <div class="tool-cat-section">
+      <div class="tool-cat-header">
+        <div class="tool-cat-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 10l4.553-2.069A1 1 0 0121 8.87V15.13a1 1 0 01-1.447.899L15 14"/><rect x="1" y="6" width="14" height="12" rx="2"/></svg></div>
+        <div><p class="tool-cat-name">Reunião e Call</p><p class="tool-cat-sub">Transcrição e análise de reuniões</p></div>
+      </div>
+      <div class="tools-grid">
+        <div class="tool-card top"><div class="tc-top"><span class="tc-name">Fireflies</span><span class="tc-badge">Recomendado</span></div><p class="tc-what">Transcreve, resume e analisa reuniões automaticamente.</p><p class="tc-when">Para capturar ações, insights e próximos passos de todas as reuniões.</p><p class="tc-diff"><strong>Diferencial:</strong> melhor custo-benefício com integração nativa em todas as plataformas de videoconferência.</p></div>
+        <div class="tool-card"><div class="tc-top"><span class="tc-name">Gong</span><span class="tc-badge">Revenue Intelligence</span></div><p class="tc-what">Analisa calls de vendas e identifica padrões de fechamento.</p><p class="tc-when">Para times de vendas que querem melhorar performance com dados de conversas.</p><p class="tc-diff"><strong>Diferencial:</strong> IA treinada especificamente para identificar padrões de fechamento em vendas.</p></div>
+      </div>
+    </div>
+
+    <div class="tool-cat-section" style="margin-bottom:0">
+      <div class="tool-cat-header">
+        <div class="tool-cat-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <div><p class="tool-cat-name">Proposta e Contrato</p><p class="tool-cat-sub">Cria e assina documentos</p></div>
+      </div>
+      <div class="tools-grid">
+        <div class="tool-card top"><div class="tc-top"><span class="tc-name">PandaDoc</span><span class="tc-badge">Recomendado</span></div><p class="tc-what">Criação, envio e assinatura digital de propostas e contratos.</p><p class="tc-when">Para fechar negócios com propostas profissionais e assinatura digital integrada.</p><p class="tc-diff"><strong>Diferencial:</strong> melhor experiência do assinante e analytics de engajamento com a proposta.</p></div>
+        <div class="tool-card"><div class="tc-top"><span class="tc-name">DocuSign AI</span><span class="tc-badge">Assinatura</span></div><p class="tc-what">Líder mundial em assinatura digital com IA para análise de contratos.</p><p class="tc-when">Para empresas que precisam de conformidade legal e escala em assinaturas.</p><p class="tc-diff"><strong>Diferencial:</strong> maior confiança jurídica do mercado, aceito em qualquer país.</p></div>
+        <div class="tool-card"><div class="tc-top"><span class="tc-name">Proposify</span><span class="tc-badge">Design</span></div><p class="tc-what">Propostas comerciais com design profissional e métricas de abertura.</p><p class="tc-when">Para agências e consultorias que precisam de propostas visualmente impactantes.</p><p class="tc-diff"><strong>Diferencial:</strong> templates de design premium e notificações em tempo real de quando a proposta é aberta.</p></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 3. SOBRE -->
+<section class="sec" id="sobre">
   <div class="about-grid reveal">
     <div>
       <p class="about-lbl">Quem é</p>
@@ -489,100 +744,83 @@ Inclua:
   </div>
 </section>
 
-<!-- 3. COMO USAR CLAUDE -->
-<section class="sec" id="como-usar">
+<!-- 4. COMO USAR CLAUDE -->
+<section class="sec alt" id="claude">
   <div class="reveal">
-    <p class="sec-lbl">Passo a passo</p>
-    <h2 class="sec-ttl">Como usar o <em>Claude</em></h2>
+    <p class="s-lbl">Passo a passo</p>
+    <h2 class="s-ttl">Como usar o <em>Claude</em></h2>
   </div>
-
-  <div class="claude-intro-box reveal">
-    <p><strong>Claude</strong> é uma IA da Anthropic — funciona como um assistente inteligente que você acessa pelo browser ou instala em ferramentas como PowerPoint, Excel e Chrome. Você conversa com ele em português, dá comandos e ele executa. Abaixo, o que você precisa saber para começar.</p>
-  </div>
-
+  <div class="claude-intro reveal"><p><strong>Claude</strong> é uma IA da Anthropic. Você acessa pelo browser ou instala em ferramentas como PowerPoint, Excel e Chrome. Converse em português, dê comandos e ele executa. Abaixo, o que você precisa saber para começar.</p></div>
   <div class="claude-grid reveal">
-
-    <div class="claude-card dk">
-      <div class="cc-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+    <div class="cc dk">
+      <div class="cc-ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
       <p class="cc-ttl">Claude.ai — Chat</p>
-      <p class="cc-txt">Acesse <strong style="color:var(--gold)">claude.ai</strong> no navegador, crie uma conta gratuita e comece a conversar. Cole prompts, peça textos, análises, códigos e muito mais. É o ponto de partida para tudo.</p>
+      <p class="cc-txt">Acesse <strong style="color:var(--gold)">claude.ai</strong> no navegador. Crie uma conta gratuita e comece a conversar. É o ponto de partida para tudo.</p>
       <span class="cc-tag">Ponto de entrada</span>
     </div>
-
-    <div class="claude-card">
-      <div class="cc-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+    <div class="cc">
+      <div class="cc-ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
       <p class="cc-ttl">Claude in Chrome</p>
-      <p class="cc-txt">Extensão para o navegador Chrome. Com ela, o Claude vê a página que você está acessando e pode resumir, responder perguntas e executar ações diretamente no browser.</p>
+      <p class="cc-txt">Extensão para o Chrome. O Claude vê a página que você está acessando e age diretamente no browser.</p>
       <span class="cc-tag">Extensão Chrome</span>
     </div>
-
-    <div class="claude-card">
-      <div class="cc-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+    <div class="cc">
+      <div class="cc-ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
       <p class="cc-ttl">Claude in PowerPoint</p>
-      <p class="cc-txt">Suplemento dentro do PowerPoint (via Microsoft AppSource). Cria e edita slides diretamente pelo painel lateral. Veja o passo a passo na Biblioteca acima.</p>
+      <p class="cc-txt">Suplemento dentro do PowerPoint. Cria e edita slides diretamente pelo painel lateral.</p>
       <span class="cc-tag">Suplemento Office</span>
     </div>
-
-    <div class="claude-card">
-      <div class="cc-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+    <div class="cc">
+      <div class="cc-ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
       <p class="cc-ttl">Claude in Excel</p>
-      <p class="cc-txt">Suplemento para Excel. Analisa planilhas, cria fórmulas, resume dados e gera insights diretamente nas células. Ideal para quem trabalha com relatórios e dados.</p>
+      <p class="cc-txt">Suplemento para Excel. Analisa planilhas, cria fórmulas e gera insights diretamente nos dados.</p>
       <span class="cc-tag">Suplemento Office</span>
     </div>
-
-    <div class="claude-card">
-      <div class="cc-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+    <div class="cc">
+      <div class="cc-ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
       <p class="cc-ttl">Claude Code</p>
-      <p class="cc-txt">Ferramenta para desenvolvedores. Funciona na linha de comando e executa tarefas de código de forma autônoma: cria arquivos, roda scripts, faz debugging e muito mais.</p>
+      <p class="cc-txt">Para desenvolvedores. Executa tarefas de código de forma autônoma na linha de comando.</p>
       <span class="cc-tag">Desenvolvedores</span>
     </div>
-
-    <div class="claude-card">
-      <div class="cc-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+    <div class="cc">
+      <div class="cc-ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
       <p class="cc-ttl">Conectores e Integrações</p>
-      <p class="cc-txt">O Claude conecta com ferramentas como Notion, Slack, HubSpot, Asana, Google Drive e mais. Você gerencia projetos, envia mensagens e acessa documentos diretamente pelo chat.</p>
+      <p class="cc-txt">Conecta Notion, Slack, HubSpot, Asana, Google Drive e mais. Tudo direto pelo chat.</p>
       <span class="cc-tag">Integrações MCP</span>
     </div>
-
   </div>
-
-  <div class="claude-intro-box reveal" style="margin-top:0;margin-bottom:0">
-    <p><strong>Dica rápida:</strong> comece pelo <strong>claude.ai</strong> no navegador. Cole um prompt desta biblioteca, veja o resultado e ajuste no próprio chat. Quando quiser avançar, explore as integrações com as ferramentas que você já usa no trabalho.</p>
-  </div>
-
+  <div class="claude-intro reveal" style="margin-bottom:0"><p><strong>Dica:</strong> comece pelo <strong>claude.ai</strong>. Cole um prompt desta biblioteca, veja o resultado e ajuste no chat. Quando quiser avançar, explore as integrações com as ferramentas que você já usa.</p></div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <div>
-    <div class="f-logo">mkt<span>.</span>dica</div>
-    <p class="f-sub">Marketing, Vendas e IA na prática</p>
-  </div>
-  <div>
-    <p class="f-handle">@mktdica</p>
-    <p class="f-copy">Daise Silveira · 2025</p>
-  </div>
+  <div><div class="f-logo">mkt<span>.</span>dica</div><p class="f-sub">Marketing, Vendas e IA na prática</p></div>
+  <div><p class="f-handle">@mktdica</p><p class="f-copy">Daise Silveira · 2025</p></div>
 </footer>
 
 <script>
-const revObs = new IntersectionObserver((entries)=>{
-  entries.forEach((e,i)=>{ if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*60);revObs.unobserve(e.target);} });
-},{threshold:.06});
-document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
+// Reveal
+const ro=new IntersectionObserver((e)=>{e.forEach((el,i)=>{if(el.isIntersecting){setTimeout(()=>el.target.classList.add('visible'),i*55);ro.unobserve(el.target);}});},{threshold:.06});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
 
-function togglePost(id){ document.getElementById(id).classList.toggle('open'); }
-function openPost(id){ const el=document.getElementById(id); if(el&&!el.classList.contains('open'))el.classList.add('open'); }
+// Accordion
+function toggle(id){document.getElementById(id).classList.toggle('open');}
+function openPost(id){const el=document.getElementById(id);if(el&&!el.classList.contains('open'))el.classList.add('open');}
 
-function copyPrompt(id,btn){
-  const text=document.getElementById(id).innerText;
-  navigator.clipboard.writeText(text).then(()=>{
-    btn.classList.add('copied');
-    btn.innerHTML=`<svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Copiado!`;
-    setTimeout(()=>{
-      btn.classList.remove('copied');
-      btn.innerHTML=`<svg class="ci" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copiar prompt`;
-    },2500);
+// Copy
+function cp(id,btn){
+  navigator.clipboard.writeText(document.getElementById(id).innerText).then(()=>{
+    btn.classList.add('cp');
+    btn.innerHTML='<svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Copiado!';
+    setTimeout(()=>{btn.classList.remove('cp');btn.innerHTML='<svg class="ci" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copiar prompt';},2500);
   });
+}
+
+// Tools tabs
+function showTab(id){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.tool-panel').forEach(p=>p.classList.remove('active'));
+  event.target.classList.add('active');
+  document.getElementById('tab-'+id).classList.add('active');
 }
 </script>
 </body>
